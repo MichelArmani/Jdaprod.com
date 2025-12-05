@@ -1,0 +1,539 @@
+/* Estilos específicos para la tienda */
+.store-beats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beat-card {
+    background: linear-gradient(135deg, rgba(9, 37, 87, 0.8) 0%, rgba(21, 26, 23, 0.9) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(58, 141, 116, 0.2);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    max-height: min-content;
+
+}
+
+.beat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgb(8, 67, 143);
+}
+
+.beat-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.beat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--emerald-medium) 0%, var(--emerald-light) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--platinum);
+    flex-shrink: 0;
+}
+
+.beat-info {
+    flex: 1;
+}
+
+.beat-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--platinum);
+    margin-bottom: 0.5rem;
+}
+
+.beat-artist {
+    color: var(--silver);
+    font-size: 1rem;
+}
+
+.beat-duration {
+    color: var(--silver);
+    font-size: 0.9rem;
+    background: rgba(58, 141, 116, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.beat-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.beat-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.beat-btn.listen {
+    background: rgba(37, 10, 133, 0.2);
+    color: var(--platinum);
+    border: 1px solid var(--emerald-glow);
+}
+
+.beat-btn.listen:hover {
+    background: var(--emerald-glow);
+    transform: translateY(-3px);
+}
+
+.beat-btn.buy {
+    background: linear-gradient(135deg, var(--emerald-medium) 0%, var(--emerald-light) 100%);
+    color: var(--platinum);
+}
+
+.beat-btn.buy:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(7, 45, 110, 0.4);
+}
+
+/* Modal de compra */
+.purchase-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 12, 15, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    overflow-y: auto;
+}
+
+.purchase-modal.active {
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+}
+
+.purchase-container {
+    width: 100%;
+    max-width: max-content;
+    background: var(--carbon);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-deep);
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+    overflow-y: auto;
+}
+
+.purchase-modal.active .purchase-container {
+    transform: translateY(0);
+}
+
+.purchase-header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(23, 70, 101, 0.2);
+    position: relative;
+}
+
+.purchase-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--platinum);
+    margin-bottom: 0.5rem;
+}
+
+.purchase-subtitle {
+    color: var(--silver);
+    font-size: 1rem;
+}
+
+.close-purchase {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(37, 39, 45, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--platinum);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+    font-size: 1.2rem;
+}
+
+.close-purchase:hover {
+    background: var(--emerald-medium);
+    transform: rotate(90deg);
+}
+
+.purchase-options {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    overflow-y: auto;
+}
+
+
+@media (max-width: 480px) {
+    .purchase-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    .purchase-container{
+        position: relative;
+    top: 50%;
+    }
+}
+
+.purchase-option {
+    background: rgba(30, 36, 33, 0.6);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+.purchase-option:hover {
+    transform: translateY(-5px);
+    border-color: rgba(49, 125, 144, 0.3);
+}
+
+.purchase-option.premium {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border: 2px solid var(--gold);
+    position: relative;
+}
+
+.premium-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--gold);
+    color: var(--deep-space);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.option-title {
+    margin-left: 3%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--platinum);
+}
+
+.option-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--emerald-glow);
+}
+
+.purchase-option.premium .option-price {
+    color: var(--gold);
+}
+
+.option-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.option-features li {
+    color: var(--silver);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.option-features li:before {
+    content: "✓";
+    color: var(--emerald-glow);
+    font-weight: bold;
+}
+
+.purchase-option.premium .option-features li:before {
+    color: var(--gold);
+}
+
+.option-btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.option-btn.basic {
+    background: var(--emerald-medium);
+    color: var(--platinum);
+    margin: auto;
+
+}
+
+
+
+.option-btn.basic:hover {
+    background: var(--emerald-light);
+    transform: translateY(-2px);
+}
+
+.option-btn.premium {
+    background: var(--gold);
+    color: var(--deep-space);
+    font-weight: 700;
+}
+
+.option-btn.premium:hover {
+    background: #e6c34d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .store-beats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .beat-actions {
+        flex-direction: column;
+    }
+
+    .purchase-options {
+        padding: 1.5rem;
+    }
+
+    .option-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* Que pereza la vida, para no crear un nuevo archivo. aqui estan los estilos para la oferta "diamante" que es la que no 
+es ni Premium ni basica */
+
+/* ===== DIAMOND OFFER STYLES ===== */
+.diamond-option {
+    position: relative;
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.15) 0%, rgba(63, 0, 113, 0.25) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(147, 51, 234, 0.4);
+    box-shadow: 0 8px 32px rgba(147, 51, 234, 0.2);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+.diamond-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(147, 51, 234, 0.1) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.diamond-option:hover::before {
+    opacity: 1;
+}
+
+.diamond-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(147, 51, 234, 0.4);
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.2) 0%, rgba(63, 0, 113, 0.3) 100%);
+}
+
+.diamond-bar {
+    background: linear-gradient(135deg, rgba(192, 132, 252, 0.8) 0%, rgba(147, 51, 234, 0.9) 100%) !important;
+    border-color: rgb(192, 132, 252) !important;
+    box-shadow: 0 8px 32px rgba(147, 51, 234, 0.5) !important;
+}
+
+.diamond-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #9333EA 0%, #7C3AED 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4);
+    z-index: 2;
+    animation: diamondPulse 2s infinite;
+}
+
+@keyframes diamondPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 20px rgba(147, 51, 234, 0.7), 0 0 20px rgba(192, 132, 252, 0.6);
+    }
+}
+
+.diamond-icon {
+    background: linear-gradient(135deg, rgba(192, 132, 252, 0.3) 0%, rgba(147, 51, 234, 0.4) 100%) !important;
+    color: #C084FC !important;
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3) !important;
+}
+
+.diamond-title {
+    background: linear-gradient(to right, #C084FC 0%, #9333EA 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 2px 10px rgba(147, 51, 234, 0.3) !important;
+}
+
+.diamond-artist {
+    color: #C084FC !important;
+    font-weight: 500;
+}
+
+.diamond-duration {
+    color: #A78BFA !important;
+    background: rgba(147, 51, 234, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.diamond-description {
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.diamond-description p {
+    color: var(--silver);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.diamond-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.diamond-features li {
+    color: var(--silver);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.diamond-features li i {
+    color: #10B981;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.diamond-btn {
+    background: linear-gradient(135deg, #9333EA 0%, #7C3AED 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4) !important;
+    border: none !important;
+    width: 100%;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.diamond-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.diamond-btn:hover::before {
+    left: 100%;
+}
+
+.diamond-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(147, 51, 234, 0.6);
+}
+
+
+.diamond-option .beat-header {
+    margin-bottom: 1rem;
+}

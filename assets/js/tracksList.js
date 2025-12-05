@@ -1,0 +1,100 @@
+// es facil esto, aunque no sepas js es bastante intuitivo, agregar
+
+function getTracks() {
+    return [
+
+        {
+            id: 1,
+            title: "I Remember Everything",
+            artist: "J DaProd",
+            duration: "",
+            preview: "../assets/songs/remember.mp3",
+            type: "production",
+        },
+
+        {
+            id: 2,
+            title: "New York my Home",
+            artist: "J DaProd",
+            duration: "",
+            preview: "../assets/songs/ny.mp3",
+            type: "production",
+        },
+
+        {
+            id: 4,
+            title: "Preview - Detroit to Havana",
+            artist: "J DaProd",
+            duration: "3:45",
+            preview: "../assets/songs/detroit.mp3",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "TN2YM52GDBPLS",
+            basicPaypalButton: "XMMGD24J4K9CA",
+            premiumFileForDownload: "assets/downloads/premium/op901nf/PREMIUM - Detroit to Havana.zip",
+            basicFileForDownload: "assets/downloads/basic/adqhpopi8/BASIC - Detroit to Havana.zip",
+        },
+
+        {
+            id: 5,
+            title: "Preview - Durkio",
+            artist: "J DaProd",
+            duration: "3:20",
+            preview: "../assets/songs/durkio.mp3",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "TN2YM52GDBPLS",
+            basicPaypalButton: "XMMGD24J4K9CA",
+            premiumFileForDownload: "assets/downloads/premium/62ecz/PREMIUM - Durkio.zip",
+            basicFileForDownload: "assets/downloads/basic/cwgq234/BASIC - Durkio.zip",
+        },
+
+        {
+            id: 6,
+            title: "Preview - Favorite Gangsta",
+            artist: "J DaProd",
+            duration: "3:15",
+            preview: "../assets/songs/favgansta.mp3",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "TN2YM52GDBPLS",
+            basicPaypalButton: "XMMGD24J4K9CA",
+            premiumFileForDownload: "assets/downloads/premium/adwqowdn/PREMIUM - Favorite Gangsta.zip",
+            basicFileForDownload: "assets/downloads/basic/qdkonas/BASIC - Favorite Gangsta.zip",
+        },
+
+        {
+            id: 7,
+            title: "Preview - God On Da Keys",
+            artist: "J DaProd",
+            duration: "3:30",
+            preview: "../assets/songs/godondakeys.mp3",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "TN2YM52GDBPLS",
+            basicPaypalButton: "XMMGD24J4K9CA",
+            premiumFileForDownload: "assets/downloads/premium/daldnw/PREMIUM - God On Da Keys.zip",
+            basicFileForDownload: "assets/downloads/basic/davoeq/BASIC - God On Da Keys.zip",
+        },
+
+        {
+            id: 8,
+            title: "Preview - Kehlani",
+            artist: "J DaProd",
+            duration: "3:25",
+            preview: "../assets/songs/khelani.mp3",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "TN2YM52GDBPLS",
+            basicPaypalButton: "XMMGD24J4K9CA",
+            premiumFileForDownload: "assets/downloads/premium/dnlkqi/PREMIUM - Kehlani.zip",
+            basicFileForDownload: "assets/downloads/basic/lqkwei/BASIC - Kehlani.zip",
+        },
+
+    ];
+}

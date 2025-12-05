@@ -1,0 +1,5 @@
+/* Al final los botones que trae paypal no se ven tan mal
+        Es que entonces Tendria que hacer todos los estilos desde
+                el principio, adaptandome a como paypal tiene los botones
+                        construidos */
+.item-header{display: none !important}

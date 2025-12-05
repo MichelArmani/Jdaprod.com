@@ -1,0 +1,142 @@
+.burger-menu-toggler {
+    display: none;
+}
+
+.burger-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: rgba(21, 26, 23, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 999;
+    transition: var(--transition-smooth);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(58, 141, 116, 0.2);
+    padding: 6rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.burger-menu.active {
+    right: 0;
+}
+
+.burger-menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.burger-nav-link {
+    color: var(--platinum);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.burger-nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(58, 141, 116, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.burger-nav-link:hover::before {
+    left: 100%;
+}
+
+.burger-nav-link:hover {
+    background: rgba(58, 141, 116, 0.1);
+    border-color: rgba(58, 141, 116, 0.3);
+    transform: translateX(10px);
+}
+
+.burger-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 13, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+}
+
+.burger-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-burger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--emerald-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--platinum);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+    font-size: 1.2rem;
+}
+
+.close-burger-menu:hover {
+    background: var(--emerald-light);
+    transform: rotate(90deg);
+}
+
+/* Mostrar burger menu solo en celulares */
+@media (max-width: 768px) {
+    .burger-menu-toggler {
+        display: flex;
+    }
+    
+    .header-nav {
+        display: none;
+    }
+}
+
+/* Ocultar burger menu en PC */
+@media (min-width: 769px) {
+    .burger-menu-toggler {
+        display: none;
+    }
+    
+    .header-nav {
+        display: flex;
+    }
+}
+
+
+
+
+
+/* A ver que pasa */
+/* ESSTAS DOS LINEAS LE AGREGAN PERFECCION */
+.burger-menu{justify-content: flex-end;}
+.burger-menu-nav{align-items: center;height: 100%;justify-content: center}
+
+
+/* Esto no deberia ir aqui pero quiero irme a jugar lol */
+.header-nav{margin: auto;}

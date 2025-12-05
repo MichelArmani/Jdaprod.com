@@ -1,0 +1,85 @@
+/* tuve que crear este archivo para no hacer prueba y error en el principal */
+
+/* TODO ESTO ES EXCLUSIVAMENTE PARA LA SECCION DE CONTACTO Y MODIFICAR CUALQUIER
+COSA SOLO TIENE EFECTO EN LA FKING SECCION DE CONTACTO */
+
+/* Magia, no tocar */
+
+.h-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.productions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.production-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    background: linear-gradient(135deg, rgba(8, 15, 32, 0.15) 0%, rgba(106, 87, 216, 0.2) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(37, 144, 150, 0.3);
+    transition: var(--transition-smooth);
+    box-shadow: 0 8px 32px rgba(106, 164, 240, 0.1);
+}
+
+.production-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(95, 166, 217, 0.2);
+    background: linear-gradient(135deg, rgba(20, 104, 143, 0.2) 0%, rgba(213, 112, 225, 0.25) 100%);
+}
+
+.production-image {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, rgba(49, 88, 240, 0.3) 0%, rgba(46, 101, 231, 0.4) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--platinum);
+}
+
+.production-info {
+    text-align: center;
+}
+
+.production-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--platinum);
+}
+
+.production-description {
+    color: var(--silver);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .productions-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .production-card {
+        min-width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* ACTUALIZACION: al final todo esto ya fue agregado al archivo principal */
+/* ACTUALIZACION 2: de todos modos se rompe si lo quito */

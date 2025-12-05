@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>J DaProd Oficial</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/googleFonts.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/BurguerMenuStyles.css">
+    <link rel="stylesheet" href="../assets/fix/contactSection.css">
+    <link rel="stylesheet" href="../assets/fix/heroSectionReplaceImages.css">
+    <link rel="stylesheet" href="../assets/css/packs.css">
+    <link rel="stylesheet" href="../assets/css/aboutSectionStyles.css">
+    <link rel="stylesheet" href="../assets/css/store.css">
+    <link rel="stylesheet" href="../assets/css/paypal.css">
+
+    <script src="../assets/js/UI.js"></script>
+</head>
+
+<body>
+
+    <header id="main-header">
+
+        <div class="header-logo-container">
+            <a style="width: 100%; height: 100%; margin: 0; padding: 0; text-align: center; display: flex; align-items: center; justify-content: center;"
+                href="#home"><img class="header-logo" src="../assets/images/logo.png" alt="Logo"></a>
+        </div>
+
+        <nav class="header-nav">
+            <a href="#home" class="nav-link">Inicio</a>
+            <a href="#productions" class="nav-link">Producciones</a>
+            <a href="#store" class="nav-link">Tienda</a>
+            <a href="#about" class="nav-link">Acerca de mi</a>
+            <a href="#contact" class="nav-link">Contacto</a>
+        </nav>
+
+        <div id="burger-menu-toggler" class="burger-menu-toggler">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+
+    <section class="hero" id="home">
+
+        <div
+            style="width: 100%; height: 100%; position: absolute; background: #07090A; background: radial-gradient(circle, rgba(7, 9, 10, 0) 0%, rgba(255, 255, 255, 0.46) 100%);">
+        </div>
+
+
+        <div class="hero-content">
+            <h1 class="hero-title">JDaProd</h1>
+            <p id="insertar-text" class="hero-subtitle">
+
+
+                <script src="../assets/js/EsHeroDescription.js"></script>
+
+                <script>mostrarBiografia("insertar-text", true);</script>
+
+            </p>
+            <style>
+                .hero-subtitle {
+                    /* sombra de ultimo momento al texto del subtitulo */
+                    text-shadow: 2px 2px 2px black;
+                }
+            </style>
+            <div class="hero-actions">
+                <a href="#productions" class="btn btn-primary">
+                    <i class="fas fa-play-circle"></i> Explorar Música
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section productions-section" id="productions">
+        <div class="section-header reveal">
+            <h2 class="section-title">MIS PRODUCCIONES</h2>
+            <p class="section-subtitle">Una selección de mis trabajos y colaboraciones musicales</p>
+        </div>
+
+
+        <div class="spotify-list reveal" id="tracks-container">
+
+            <div class="top-bar-detail"></div>
+
+
+        </div>
+    </section>
+
+
+    <script src="../assets/js/Esstore.js"></script>
+
+    <section class="section store-section" id="store">
+        <div class="section-header reveal">
+            <h2 class="section-title">TIENDA DE BEATS</h2>
+            <p class="section-subtitle">Compra licencias de mis beats para usar en tus proyectos. Cada beat incluye
+                versión básica y premium.</p>
+        </div>
+
+        <div class="h-container">
+            <div class="store-beats-grid" id="beats-container">
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="purchase-modal" id="purchase-modal">
+        <div class="purchase-container">
+            <div class="purchase-header">
+                <button class="close-purchase" id="close-purchase">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3 class="purchase-title" id="purchase-track-title">Detroit to Havana</h3>
+                <p class="purchase-subtitle">Selecciona el tipo de licencia</p>
+            </div>
+
+            <div class="purchase-options">
+                <div class="purchase-option basic-option">
+                    <div class="option-header">
+                        <h4 class="option-title">Paquete Básico</h4>
+                        <div class="option-price" id="basic-price">25.00 €</div>
+                    </div>
+                    <ul class="option-features">
+                        <li><i class="fas fa-check"></i> Uso personal y comercial</li>
+                        <li><i class="fas fa-check"></i> Archivos MP3 + WAV</li>
+                        <li><i class="fas fa-check"></i> Licencia estándar</li>
+                        <li><i class="fas fa-check"></i> Etiqueta Incluida</li>
+                    </ul>
+                    <div class="paypal-buttons-container">
+                        <div id="paypal-container-basic" class="paypal-button-wrapper"></div>
+                    </div>
+                </div>
+
+                <div class="purchase-option premium">
+                    <div class="premium-badge">Premium</div>
+                    <div class="option-header">
+                        <h4 class="option-title">Paquete Premium</h4>
+                        <div class="option-price" id="premium-price">65.00 €</div>
+                    </div>
+                    <ul class="option-features">
+                        <li><i class="fas fa-check"></i> Paquete Básico +</li>
+                        <li><i class="fas fa-check"></i> Stems</li>
+                        <li><i class="fas fa-check"></i> Beats separados por pistas</li>
+                        <li><i class="fas fa-check"></i> Proyecto FL Studio</li>
+                        <li><i class="fas fa-check"></i> Etiqueta Opcional</li>
+                    </ul>
+                    <div id="paypal-buttons-container">
+                        <div id="paypal-container-premium" class="paypal-button-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </style>
+
+    <section class="section about-section">
+        <div class="about-container">
+            <div class="about-content reveal" id="about">
+                <div class="about-text">
+                    <h2 class="about-title">ACERCA DE MÍ</h2>
+
+
+
+                    <p class="about-description">
+                        Jorge David Cumberbatch Navarro, más conocido como J DaProd, es un productor musical y DJ cubano
+                        nacido en 2002.
+                        Originario de La Habana, pasó alrededor de 8 años de su infancia en Nueva York, Estados Unidos,
+                        donde creció con
+                        la influencia de la música afroamericana, especialmente el Rap y R&B.
+                    </p>
+                    <p class="about-description">
+                        Posteriormente, en 2019, a la edad de 17 años, comenzó a hacer sus primeras producciones y
+                        eventos de DJ en pequeños
+                        locales, ya de regreso en Cuba. Inicialmente comenzó haciendo música electrónica, por su gusto
+                        por géneros como el
+                        future bass y el melodic dubstep.
+                    </p>
+                    <p class="about-description">
+                        A partir de 2021, empezó a desarrollarse en géneros de su pasada influencia como el trap, drill,
+                        R&B. Recientemente,
+                        luego de haber vivido alrededor de un año en Burkina Faso, J ha adquirido también influencias de
+                        la creación urbana
+                        en el África francófona y Francia misma.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Influencias Multiculturales</h4>
+                                <p>Fusión de sonidos cubanos, estadounidenses y africanos que crean una identidad
+                                    musical única.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-bridge"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Puente Musical</h4>
+                                <p>Conectando artistas hispanos, anglófonos y francófonos a través de la colaboración y
+                                    producción.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Especialización</h4>
+                                <p>Enfoque en trap, drill y R&B, con capacidad para mezcla y masterización en múltiples
+                                    géneros.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="about-image">
+                        <img src="../assets/images/about1.png" alt="J DaProd - Productor Musical">
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-stats reveal">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Producciones</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section contact-section" id="contact">
+        <div class="section-header reveal">
+            <h2 class="section-title">COLABOREMOS JUNTOS</h2>
+            <p class="section-subtitle">¿Tienes un proyecto en mente? Hablemos sobre cómo podemos crear algo juntos.</p>
+        </div>
+
+        <div class="h-container">
+            <div class="productions-grid">
+                <div class="production-card reveal">
+                    <div class="production-image">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="production-info">
+                        <h3 class="production-title">CONTACTO DIRECTO</h3>
+                        <p class="production-description">Para bookings, colaboraciones o simplemente para saludar.</p>
+                        <a href="mailto:officialjdaprod@gmail.com" class="btn btn-primary" style="margin-top: 1rem;">
+                            <i class="fas fa-paper-plane"></i> Enviar Email
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="production-card reveal">
+                    <div class="production-image">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="production-info">
+                        <h3 class="production-title">COLABORACIONES</h3>
+                        <p class="production-description">¿Eres artista o marca? Exploremos sinergias creativas.</p>
+                        <a href="https://wa.me:/+22650987034" class="btn btn-primary" style="margin-top: 1rem;">
+                            <i class="fas fa-users"></i> Proponer Colaboración
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="social-buttons">
+            <a href="https://instagram.com/jdaprod?igsh=a29wNG4zb2Mwc2Rt&utm_source=qr" class="social-btn"
+                target="_blank">
+                <span class="fab fa-instagram"></span>
+            </a>
+            <a href="https://twitter.com/j_daprod?s=11" class="social-btn" target="_blank">
+                <span class="fab fa-twitter"></span>
+            </a>
+            <a href="https://facebook.com/1BUPXH9iwm/?mibextid=wwXIfr" class="social-btn" target="_blank">
+                <span class="fab fa-facebook-f"></span>
+            </a>
+            <a href="https://youtube.com/@jdaprod?si=2S0vW-BXAruJ80Ld" class="social-btn" target="_blank">
+                <span class="fab fa-youtube"></span>
+            </a>
+            <a href="https://spotify.com/3Cj1SZVvFmNEfEfVTSzuoS?si=Y5IZJ0TeQjyBsx8ygUKycg" class="social-btn"
+                target="_blank">
+                <span class="fab fa-spotify"></span>
+            </a>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025. Todos los derechos reservados. | Diseñado con <i class="fas fa-heart"
+                    style="color: var(--emerald-glow);"></i></p>
+        </div>
+    </footer>
+
+    <!-- Reproductor de musica:
+
+        Esto no es visible en la pagina, el codigo solo está presente por si lo llamo desde MichelArmaniAudioPlayer.js
+        Si quieres visualizarlo, debes reproducir una cancion -->
+
+    <div class="player-modal" id="player-modal">
+        <div class="close-player" id="close-player">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="player-container">
+            <div class="player-header">
+                <div class="player-album-art">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="player-track-info">
+                    <h3 class="player-track-title" id="player-track-title">ECOS DEL ABISMO</h3>
+                    <p class="player-track-artist" id="player-track-artist">JDaProd</p>
+                </div>
+            </div>
+            <div class="player-controls">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="time-info">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+                <div class="control-buttons">
+                    <div class="control-btn secondary" id="prev-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </div>
+                    <div class="control-btn play-pause" id="play-pause-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="control-btn secondary" id="next-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </div>
+                </div>
+                <div class="volume-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider"
+                        id="volume-slider">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <audio id="audio-player" preload="metadata"></audio>
+    <script>    document.write('<script src="../assets/js/tracksList.js?v=' + Date.now() + '"><\/script>');</script>
+    <script src="../assets/js/MichelArmaniAudioPlayer.js"></script>
+
+
+
+
+    <div class="burger-menu-overlay" id="burger-menu-overlay"></div>
+
+    <div class="burger-menu" id="burger-menu">
+        <button class="close-burger-menu" id="close-burger-menu">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <nav class="burger-menu-nav">
+
+            <h1 class="hero-title">J DaProd</h1>
+
+            <a href="#home" class="burger-nav-link" onclick="closeBurgerMenu()">
+                <i class="fas fa-home"></i> Inicio
+            </a>
+            <a href="#productions" class="burger-nav-link" onclick="closeBurgerMenu()">
+                <i class="fas fa-music"></i> Producciones
+            </a>
+            <a href="#store" class="burger-nav-link" onclick="closeBurgerMenu()">
+                <i class="fas fa-shopping-bag"></i> Tienda
+            </a>
+            <a href="#contact" class="burger-nav-link" onclick="closeBurgerMenu()">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+            <a href="#about" class="burger-nav-link" onclick="closeBurgerMenu()">
+                <i class="fas fa-user"></i> Acerca de Mí
+            </a>
+        </nav>
+    </div>
+</body>
+
+</html>

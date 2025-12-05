@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>J DaProd Oficial</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --deep-space: #0a0e0f;
+            --carbon: #121212;
+            --charcoal: #1a1a1a;
+            --dark-slate: #1e2124;
+            --midnight-blue: #0a1929;
+            --navy-blue: #0f2a3f;
+            --deep-blue: #1a365d;
+            --sapphire-dark: #1e3a5f;
+            --sapphire-medium: #2563eb;
+            --sapphire-light: #3b82f6;
+            --azure: #60a5fa;
+            --sky-blue: #93c5fd;
+            --light-cyan: #dbeafe;
+            --platinum: #e8eaed;
+            --silver: #b0b8c1;
+            --light-gray: #8b949e;
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow-deep: 0 10px 25px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--platinum);
+            background-color: var(--deep-space);
+            overflow-x: hidden;
+        }
+        
+        .language-selector-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--deep-space) 0%, var(--midnight-blue) 50%, var(--deep-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .language-selector-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.15) 0, transparent 25%), 
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0, transparent 25%), 
+                radial-gradient(circle at 50% 50%, rgba(10, 14, 15, 0.9) 0, transparent 50%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .language-container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .language-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--platinum) 0, var(--sky-blue) 50%, var(--azure) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .language-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--sapphire-medium), var(--azure));
+            border-radius: 2px;
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .language-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: stretch;
+        }
+        
+        .language-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background: linear-gradient(135deg, rgba(10, 25, 41, 0.7) 0%, rgba(30, 58, 95, 0.4) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-deep);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .language-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: -1;
+        }
+        
+        .language-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2), var(--shadow-glow);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+        
+        .language-card:hover::before {
+            opacity: 1;
+        }
+        
+        .flag-container {
+            width: 120px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition-smooth);
+            border: 2px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .language-card:hover .flag-container {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .flag {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .language-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--platinum);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .language-subtitle {
+            color: var(--silver);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .language-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            background: linear-gradient(135deg, var(--sapphire-medium) 0, var(--sapphire-light) 100%);
+            color: var(--platinum);
+            box-shadow: var(--shadow-deep);
+            margin-top: auto;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .language-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--sapphire-light) 0, var(--azure) 100%);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: -1;
+        }
+        
+        .language-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+        }
+        
+        .language-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .language-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .language-card {
+                min-width: 100%;
+                max-width: 400px;
+            }
+            
+            .language-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .language-title {
+                font-size: 2rem;
+            }
+            
+            .language-selector-page {
+                padding: 1rem;
+            }
+            
+            .language-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector-page">
+        
+        <div class="particles" id="particles"></div>
+        
+        <div class="language-container">
+            <h1 class="language-title">Selecciona tu idioma</h1>
+            
+            <div class="language-grid">
+                
+                <a href="es/index.html" class="language-card">
+                    <div class="flag-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1125px-Flag_of_Spain.svg.png?20240115205409" alt="Bandera de España" class="flag">
+                    </div>
+                    <h3 class="language-name">Español</h3>
+                    <p class="language-subtitle">Version español</p>
+                    <span class="language-btn">
+                        <i class="fas fa-check"></i> Seleccionar
+                    </span>
+                </a>
+                
+                <a href="en/index.html" class="language-card">
+                    <div class="flag-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt="Bandera de Estados Unidos" class="flag">
+                    </div>
+                    <h3 class="language-name">English</h3>
+                    <p class="language-subtitle">English version</p>
+                    <span class="language-btn">
+                        <i class="fas fa-check"></i> Select
+                    </span>
+                </a>
+                
+                <a href="fr/index.html" class="language-card">
+                    <div class="flag-container">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMjAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzAwMjY1MyIvPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMjAwIiB4PSIxMDAiIGZpbGw9IiNmZmYiLz48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjIwMCIgeD0iMjAwIiBmaWxsPSIjRUMxRjIzIi8+PC9zdmc+" alt="Bandera de Francia" class="flag">
+                    </div>
+                    <h3 class="language-name">Français</h3>
+                    <p class="language-subtitle">Version française</p>
+                    <span class="language-btn">
+                        <i class="fas fa-check"></i> Sélectionner
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                particle.style.animationDuration = `${Math.random() * 10 + 15}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
