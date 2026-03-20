@@ -1,8 +1,8 @@
-// es facil esto, aunque no sepas js es bastante intuitivo, agregar
+// Archivo generado automáticamente por el Panel de Administración
+// Última actualización: 2026-03-20 01:55:23
 
 function getTracks() {
     return [
-
         {
             id: 1,
             title: "I Remember Everything",
@@ -11,7 +11,6 @@ function getTracks() {
             preview: "../assets/songs/remember.mp3",
             type: "production",
         },
-
         {
             id: 2,
             title: "New York my Home",
@@ -20,7 +19,6 @@ function getTracks() {
             preview: "../assets/songs/ny.mp3",
             type: "production",
         },
-
         {
             id: 4,
             title: "Preview - Detroit to Havana",
@@ -35,7 +33,6 @@ function getTracks() {
             premiumFileForDownload: "assets/downloads/premium/op901nf/PREMIUM - Detroit to Havana.zip",
             basicFileForDownload: "assets/downloads/basic/adqhpopi8/BASIC - Detroit to Havana.zip",
         },
-
         {
             id: 5,
             title: "Preview - Durkio",
@@ -50,7 +47,6 @@ function getTracks() {
             premiumFileForDownload: "assets/downloads/premium/62ecz/PREMIUM - Durkio.zip",
             basicFileForDownload: "assets/downloads/basic/cwgq234/BASIC - Durkio.zip",
         },
-
         {
             id: 6,
             title: "Preview - Favorite Gangsta",
@@ -65,7 +61,6 @@ function getTracks() {
             premiumFileForDownload: "assets/downloads/premium/adwqowdn/PREMIUM - Favorite Gangsta.zip",
             basicFileForDownload: "assets/downloads/basic/qdkonas/BASIC - Favorite Gangsta.zip",
         },
-
         {
             id: 7,
             title: "Preview - God On Da Keys",
@@ -80,7 +75,6 @@ function getTracks() {
             premiumFileForDownload: "assets/downloads/premium/daldnw/PREMIUM - God On Da Keys.zip",
             basicFileForDownload: "assets/downloads/basic/davoeq/BASIC - God On Da Keys.zip",
         },
-
         {
             id: 8,
             title: "Preview - Kehlani",
@@ -95,6 +89,13 @@ function getTracks() {
             premiumFileForDownload: "assets/downloads/premium/dnlkqi/PREMIUM - Kehlani.zip",
             basicFileForDownload: "assets/downloads/basic/lqkwei/BASIC - Kehlani.zip",
         },
-
+        {
+            id: 9,
+            title: "123",
+            artist: "J DaProd",
+            duration: "123",
+            preview: "123",
+            type: "production",
+        }
     ];
 }
