@@ -1,11 +1,11 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-03-20 02:02:37
+// Última actualización: 2026-03-20 02:04:48
 
 function getTracks() {
     return [
         {
             id: 1,
-            title: "I Remember Everythin",
+            title: "I Remember Everything",
             artist: "J DaProd",
             duration: "",
             preview: "../assets/songs/remember.mp3",
