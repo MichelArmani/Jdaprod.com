@@ -372,7 +372,7 @@ function loadTracksList() {
 function loadFallbackTracks() {
     const timestamp = new Date().getTime();
     const script = document.createElement('script');
-    script.src = `https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/js/tracksList.js?t=${timestamp}`;
+    script.src = `https://jdaprodadminpanel800.rf.gd/tracksList.js?t=${timestamp}`;
     script.type = 'text/javascript';
     script.onload = function() {
         if (typeof Get_tracks === 'function') {
