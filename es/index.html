@@ -364,47 +364,17 @@
 
 
     <audio id="audio-player" preload="metadata"></audio>
-    <script>  const fecha = new Date();  
-    document.write('<script src="https://michelarmani.github.io/Jdaprod.com/assets/js/tracksList.js?v=' + fecha.toLocaleString() + '"><\/script>');</script>
 
 function loadTracksList() {
-    // Generar timestamp único para cada carga
-    const timestamp = new Date().getTime();
-    const random = Math.random().toString(36).substring(7);
-    
-    // Crear elemento script dinámicamente
-    const script = document.createElement('script');
-    
-    // URL ABSOLUTA con protocolo https://
-    script.src = `https://michelarmani.github.io/Jdaprod.com/assets/js/tracksList.js?t=${timestamp}&r=${random}`;
-    
-    script.type = 'text/javascript';
-    
-    // Cuando se carga, ejecutar Get_tracks()
-    script.onload = function() {
-        console.log('tracksList.js cargado sin caché desde GitHub');
-        if (typeof Get_tracks === 'function') {
-            Get_tracks();
-        }
-    };
-    
-    script.onerror = function() {
-        console.error('Error cargando tracksList.js desde GitHub');
-        // Puedes intentar con raw.githubusercontent como fallback
-        loadFallbackTracks();
-    };
-    
-    document.body.appendChild(script);
+    loadFallbackTracks()
 }
 
-// Fallback: cargar directamente desde raw.githubusercontent
 function loadFallbackTracks() {
     const timestamp = new Date().getTime();
     const script = document.createElement('script');
     script.src = `https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/js/tracksList.js?t=${timestamp}`;
     script.type = 'text/javascript';
     script.onload = function() {
-        console.log('tracksList.js cargado desde raw.githubusercontent');
         if (typeof Get_tracks === 'function') {
             Get_tracks();
         }
