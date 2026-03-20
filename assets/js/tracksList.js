@@ -1,11 +1,11 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-03-20 01:57:44
+// Última actualización: 2026-03-20 01:58:07
 
 function getTracks() {
     return [
         {
             id: 1,
-            title: "I Remember Everything",
+            title: "I Remember Everythinggg",
             artist: "J DaProd",
             duration: "",
             preview: "../assets/songs/remember.mp3",
@@ -88,14 +88,6 @@ function getTracks() {
             basicPaypalButton: "XMMGD24J4K9CA",
             premiumFileForDownload: "assets/downloads/premium/dnlkqi/PREMIUM - Kehlani.zip",
             basicFileForDownload: "assets/downloads/basic/lqkwei/BASIC - Kehlani.zip",
-        },
-        {
-            id: 9,
-            title: "123",
-            artist: "J DaProd",
-            duration: "123",
-            preview: "123",
-            type: "production",
         }
     ];
 }
