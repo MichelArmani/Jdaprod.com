@@ -88,14 +88,6 @@ function getTracks() {
             basicPaypalButton: "XMMGD24J4K9CA",
             premiumFileForDownload: "assets/downloads/premium/dnlkqi/PREMIUM - Kehlani.zip",
             basicFileForDownload: "assets/downloads/basic/lqkwei/BASIC - Kehlani.zip",
-        },
-        {
-            id: 9,
-            title: "Cancion de Prueba",
-            artist: "J DaProd",
-            duration: "3:15",
-            preview: "https://file-examples.com/wp-content/storage/2017/11/file_example_MP3_700KB.mp3",
-            type: "production",
         }
     ];
 }
