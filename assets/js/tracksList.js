@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-03-23 05:00:53
+// Última actualización: 2026-03-23 05:03:20
 
 function getTracks() {
     return [
@@ -94,7 +94,7 @@ function getTracks() {
             title: "test",
             artist: "J DaProd",
             duration: "3:45",
-            preview: "https://jdaprodAdminPanel800.rf.gd/previews/stream.php?file=test_1774253944.mp3",
+            preview: "https://jdaprodAdminPanel800.rf.gd/previews/index.php?file=test_1774253944.mp3",
             type: "production",
         }
     ];
