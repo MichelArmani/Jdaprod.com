@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-03-23 05:19:50
+// Última actualización: 2026-03-23 18:03:14
 
 function getTracks() {
     return [
@@ -88,6 +88,20 @@ function getTracks() {
             basicPaypalButton: "XMMGD24J4K9CA",
             premiumFileForDownload: "",
             basicFileForDownload: "",
+        },
+        {
+            id: 9,
+            title: "Congo",
+            artist: "J DaProd",
+            duration: "2:16",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Congo_1774303392.mp3?v=1774303394",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "TN2YM52GDBPLS",
+            basicPaypalButton: "XMMGD24J4K9CA",
+            premiumFileForDownload: "https://1024terabox.com/s/1eVeusFR6ykqoKG8qDofpvg",
+            basicFileForDownload: "https://1024terabox.com/s/1fs8SUbkoX_hpi06QRgnoAQ",
         }
     ];
 }
