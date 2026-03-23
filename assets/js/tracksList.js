@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-03-23 05:07:15
+// Última actualización: 2026-03-23 05:17:54
 
 function getTracks() {
     return [
@@ -88,14 +88,6 @@ function getTracks() {
             basicPaypalButton: "XMMGD24J4K9CA",
             premiumFileForDownload: "",
             basicFileForDownload: "",
-        },
-        {
-            id: 9,
-            title: "test",
-            artist: "J DaProd",
-            duration: "3:45",
-            preview: "https://jdaprodAdminPanel800.rf.gd/previews/index.php?file=test_1774253944.mp3",
-            type: "production",
         }
     ];
 }
