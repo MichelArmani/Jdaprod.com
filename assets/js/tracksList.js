@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-03-23 09:19:04
+// Última actualización: 2026-03-23 04:59:23
 
 function getTracks() {
     return [
@@ -8,7 +8,7 @@ function getTracks() {
             title: "I Remember Everything",
             artist: "J DaProd",
             duration: "",
-            preview: "../assets/songs/remember.mp3",
+            preview: "empty",
             type: "production",
         },
         {
@@ -16,7 +16,7 @@ function getTracks() {
             title: "New York my Home",
             artist: "J DaProd",
             duration: "",
-            preview: "../assets/songs/ny.mp3",
+            preview: "empty",
             type: "production",
         },
         {
@@ -24,7 +24,7 @@ function getTracks() {
             title: "Preview - Detroit to Havana",
             artist: "J DaProd",
             duration: "3:45",
-            preview: "../assets/songs/detroit.mp3",
+            preview: "empty",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -38,7 +38,7 @@ function getTracks() {
             title: "Preview - Durkio",
             artist: "J DaProd",
             duration: "3:20",
-            preview: "../assets/songs/durkio.mp3",
+            preview: "empty",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -52,7 +52,7 @@ function getTracks() {
             title: "Preview - Favorite Gangsta",
             artist: "J DaProd",
             duration: "3:15",
-            preview: "../assets/songs/favgansta.mp3",
+            preview: "empty",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -66,7 +66,7 @@ function getTracks() {
             title: "Preview - God On Da Keys",
             artist: "J DaProd",
             duration: "3:30",
-            preview: "../assets/songs/godondakeys.mp3",
+            preview: "empty",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -80,7 +80,7 @@ function getTracks() {
             title: "Preview - Kehlani",
             artist: "J DaProd",
             duration: "3:25",
-            preview: "../assets/songs/khelani.mp3",
+            preview: "empty",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
