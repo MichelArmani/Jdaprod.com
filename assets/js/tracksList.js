@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-03-21 01:38:12
+// Última actualización: 2026-03-23 09:14:27
 
 function getTracks() {
     return [
@@ -30,8 +30,8 @@ function getTracks() {
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
             basicPaypalButton: "XMMGD24J4K9CA",
-            premiumFileForDownload: "assets/downloads/premium/op901nf/PREMIUM - Detroit to Havana.zip",
-            basicFileForDownload: "assets/downloads/basic/adqhpopi8/BASIC - Detroit to Havana.zip",
+            premiumFileForDownload: "",
+            basicFileForDownload: "",
         },
         {
             id: 5,
@@ -44,8 +44,8 @@ function getTracks() {
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
             basicPaypalButton: "XMMGD24J4K9CA",
-            premiumFileForDownload: "assets/downloads/premium/62ecz/PREMIUM - Durkio.zip",
-            basicFileForDownload: "assets/downloads/basic/cwgq234/BASIC - Durkio.zip",
+            premiumFileForDownload: "",
+            basicFileForDownload: "",
         },
         {
             id: 6,
@@ -58,8 +58,8 @@ function getTracks() {
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
             basicPaypalButton: "XMMGD24J4K9CA",
-            premiumFileForDownload: "assets/downloads/premium/adwqowdn/PREMIUM - Favorite Gangsta.zip",
-            basicFileForDownload: "assets/downloads/basic/qdkonas/BASIC - Favorite Gangsta.zip",
+            premiumFileForDownload: "",
+            basicFileForDownload: "",
         },
         {
             id: 7,
@@ -72,8 +72,8 @@ function getTracks() {
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
             basicPaypalButton: "XMMGD24J4K9CA",
-            premiumFileForDownload: "assets/downloads/premium/daldnw/PREMIUM - God On Da Keys.zip",
-            basicFileForDownload: "assets/downloads/basic/davoeq/BASIC - God On Da Keys.zip",
+            premiumFileForDownload: "",
+            basicFileForDownload: "",
         },
         {
             id: 8,
@@ -86,8 +86,8 @@ function getTracks() {
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
             basicPaypalButton: "XMMGD24J4K9CA",
-            premiumFileForDownload: "assets/downloads/premium/dnlkqi/PREMIUM - Kehlani.zip",
-            basicFileForDownload: "assets/downloads/basic/lqkwei/BASIC - Kehlani.zip",
+            premiumFileForDownload: "",
+            basicFileForDownload: "",
         }
     ];
 }
