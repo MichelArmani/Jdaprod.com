@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-05 17:40:30
+// Última actualización: 2026-04-05 17:43:14
 
 function getTracks() {
     return [
@@ -9,6 +9,14 @@ function getTracks() {
             artist: "J DaProd",
             duration: "",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/I_Remember_Everything_1775416091.mp3?v=1775416094",
+            type: "production",
+        },
+        {
+            id: 2,
+            title: "New York my Home",
+            artist: "J DaProd",
+            duration: "",
+            preview: "empty",
             type: "production",
         },
         {
@@ -115,6 +123,14 @@ function getTracks() {
             artist: "J DaProd ft SkynnyH",
             duration: "2:38",
             preview: "https://open.spotify.com/track/1yCFYUEsHCLfC3GF6k8Vn6?si=oSTHExzeSaWChoq2wn8lkA",
+            type: "production",
+        },
+        {
+            id: 12,
+            title: "Dime",
+            artist: "Adarhi (prod by J DaProd)",
+            duration: "",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Dime_1775425392.mp3?v=1775425394",
             type: "production",
         }
     ];
