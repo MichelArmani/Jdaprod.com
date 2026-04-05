@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-04 21:25:28
+// Última actualización: 2026-04-04 21:26:09
 
 function getTracks() {
     return [
@@ -105,20 +105,6 @@ function getTracks() {
         },
         {
             id: 10,
-            title: "Sexy Bells",
-            artist: "J DaProd",
-            duration: "2:56",
-            preview: "",
-            type: "shop",
-            premiumPrice: 65,
-            basicPrice: 25,
-            premiumPaypalButton: "https://www.paypal.com/ncp/payment/YJFUQHSMUPSHY",
-            basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
-            premiumFileForDownload: "https://1024terabox.com/s/1Hg7kBodyRHHa9Syn8-zGuw",
-            basicFileForDownload: "https://1024terabox.com/s/1Sx2GFa3vtr7JPtOvW1j6FQ",
-        },
-        {
-            id: 11,
             title: "Sexy Bells",
             artist: "J DaProd",
             duration: "2:56",
