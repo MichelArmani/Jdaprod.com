@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-05 18:28:58
+// Última actualización: 2026-04-05 18:30:43
 
 function getTracks() {
     return [
@@ -9,14 +9,6 @@ function getTracks() {
             artist: "J DaProd",
             duration: "",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/I_Remember_Everything_1775416091.mp3?v=1775416094",
-            type: "production",
-        },
-        {
-            id: 2,
-            title: "New York my Home",
-            artist: "J DaProd",
-            duration: "",
-            preview: "empty",
             type: "production",
         },
         {
