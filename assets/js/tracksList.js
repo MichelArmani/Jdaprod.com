@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-05 15:20:25
+// Última actualización: 2026-04-05 17:24:53
 
 function getTracks() {
     return [
@@ -123,14 +123,6 @@ function getTracks() {
             artist: "J DaProd ft SkynnyH",
             duration: "2:38",
             preview: "https://open.spotify.com/track/1yCFYUEsHCLfC3GF6k8Vn6?si=oSTHExzeSaWChoq2wn8lkA",
-            type: "production",
-        },
-        {
-            id: 12,
-            title: "Escuela Más Calle EP",
-            artist: "Henry Sam & Mariano (Prod by J DaProd)",
-            duration: "14:07",
-            preview: "https://open.spotify.com/album/4FWyJ97lh7bKNJ2Qgrs3LA?si=-owT5sCBRx-7oNgdVSWn2g",
             type: "production",
         }
     ];
