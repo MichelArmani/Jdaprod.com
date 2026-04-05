@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-05 15:02:18
+// Última actualización: 2026-04-05 15:20:25
 
 function getTracks() {
     return [
@@ -8,7 +8,7 @@ function getTracks() {
             title: "I Remember Everything",
             artist: "J DaProd",
             duration: "",
-            preview: "empty",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/I_Remember_Everything_1775416091.mp3?v=1775416094",
             type: "production",
         },
         {
@@ -21,7 +21,7 @@ function getTracks() {
         },
         {
             id: 4,
-            title: "Preview - Detroit to Havana",
+            title: "Detroit to Havana",
             artist: "J DaProd",
             duration: "3:45",
             preview: "empty",
@@ -35,7 +35,7 @@ function getTracks() {
         },
         {
             id: 5,
-            title: "Preview - Durkio",
+            title: "Durkio",
             artist: "J DaProd",
             duration: "3:20",
             preview: "empty",
@@ -49,7 +49,7 @@ function getTracks() {
         },
         {
             id: 6,
-            title: "Preview - Favorite Gangsta",
+            title: "Favorite Gangsta",
             artist: "J DaProd",
             duration: "3:15",
             preview: "empty",
@@ -63,7 +63,7 @@ function getTracks() {
         },
         {
             id: 7,
-            title: "Preview - God On Da Keys",
+            title: "God On Da Keys",
             artist: "J DaProd",
             duration: "3:30",
             preview: "empty",
@@ -77,7 +77,7 @@ function getTracks() {
         },
         {
             id: 8,
-            title: "Preview - Kehlani",
+            title: "Kehlani",
             artist: "J DaProd",
             duration: "3:25",
             preview: "empty",
