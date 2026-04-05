@@ -1,19 +1,11 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-04 21:30:46
+// Última actualización: 2026-04-05 14:19:21
 
 function getTracks() {
     return [
         {
             id: 1,
             title: "I Remember Everything",
-            artist: "J DaProd",
-            duration: "",
-            preview: "empty",
-            type: "production",
-        },
-        {
-            id: 2,
-            title: "New York my Home",
             artist: "J DaProd",
             duration: "",
             preview: "empty",
