@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-04 21:26:09
+// Última actualización: 2026-04-04 21:30:15
 
 function getTracks() {
     return [
@@ -108,7 +108,7 @@ function getTracks() {
             title: "Sexy Bells",
             artist: "J DaProd",
             duration: "2:56",
-            preview: "",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Sexy_Bells_1775352606.mp3?v=1775352608",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
