@@ -1,11 +1,19 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-05 14:19:21
+// Última actualización: 2026-04-05 14:23:17
 
 function getTracks() {
     return [
         {
             id: 1,
             title: "I Remember Everything",
+            artist: "J DaProd",
+            duration: "",
+            preview: "empty",
+            type: "production",
+        },
+        {
+            id: 2,
+            title: "New York my Home",
             artist: "J DaProd",
             duration: "",
             preview: "empty",
@@ -108,6 +116,14 @@ function getTracks() {
             basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
             premiumFileForDownload: "https://1024terabox.com/s/1Hg7kBodyRHHa9Syn8-zGuw",
             basicFileForDownload: "https://1024terabox.com/s/1Sx2GFa3vtr7JPtOvW1j6FQ",
+        },
+        {
+            id: 11,
+            title: "Twerk Dat",
+            artist: "J DaProd ft SkynnyH",
+            duration: "2:38",
+            preview: "https://open.spotify.com/track/1yCFYUEsHCLfC3GF6k8Vn6?si=oSTHExzeSaWChoq2wn8lkA",
+            type: "production",
         }
     ];
 }
