@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-05 17:43:14
+// Última actualización: 2026-04-05 17:50:52
 
 function getTracks() {
     return [
@@ -131,6 +131,14 @@ function getTracks() {
             artist: "Adarhi (prod by J DaProd)",
             duration: "",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Dime_1775425392.mp3?v=1775425394",
+            type: "production",
+        },
+        {
+            id: 13,
+            title: "Yo Te Quiero",
+            artist: "Henry Sam (prod by J DaProd)",
+            duration: "",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Yo_Te_Quiero_1775425849.mp3?v=1775425852",
             type: "production",
         }
     ];
