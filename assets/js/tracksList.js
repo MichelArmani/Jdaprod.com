@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-05 17:50:52
+// Última actualización: 2026-04-05 18:18:35
 
 function getTracks() {
     return [
@@ -139,6 +139,14 @@ function getTracks() {
             artist: "Henry Sam (prod by J DaProd)",
             duration: "",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Yo_Te_Quiero_1775425849.mp3?v=1775425852",
+            type: "production",
+        },
+        {
+            id: 14,
+            title: "Talento de Cuna",
+            artist: "Midaz King, MC Gero, Henry Sam (prod by J DaProd)",
+            duration: "",
+            preview: "https://open.spotify.com/album/0386z6RQlImj6Vtl2fDlcE?si=9_b85wcwThqoEAF6FseI2Q",
             type: "production",
         }
     ];
