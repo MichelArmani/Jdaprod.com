@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-04 21:20:22
+// Última actualización: 2026-04-04 21:22:39
 
 function getTracks() {
     return [
@@ -102,20 +102,6 @@ function getTracks() {
             basicPaypalButton: "XMMGD24J4K9CA",
             premiumFileForDownload: "https://1024terabox.com/s/1eVeusFR6ykqoKG8qDofpvg",
             basicFileForDownload: "https://1024terabox.com/s/1fs8SUbkoX_hpi06QRgnoAQ",
-        },
-        {
-            id: 10,
-            title: "Sexy Bells",
-            artist: "J DaProd",
-            duration: "2:56",
-            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Sexy_Bells_1775352020.mp3?v=1775352022",
-            type: "shop",
-            premiumPrice: 65,
-            basicPrice: 25,
-            premiumPaypalButton: "https://www.paypal.com/ncp/payment/YJFUQHSMUPSHY",
-            basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
-            premiumFileForDownload: "https://1024terabox.com/s/1Hg7kBodyRHHa9Syn8-zGuw",
-            basicFileForDownload: "https://1024terabox.com/s/1Sx2GFa3vtr7JPtOvW1j6FQ",
         }
     ];
 }
