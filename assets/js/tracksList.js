@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-05 17:30:25
+// Última actualización: 2026-04-05 17:32:36
 
 function getTracks() {
     return [
@@ -123,14 +123,6 @@ function getTracks() {
             artist: "J DaProd ft SkynnyH",
             duration: "2:38",
             preview: "https://open.spotify.com/track/1yCFYUEsHCLfC3GF6k8Vn6?si=oSTHExzeSaWChoq2wn8lkA",
-            type: "production",
-        },
-        {
-            id: 12,
-            title: "Dime",
-            artist: "Adarhi (prod by J DaProd)",
-            duration: "",
-            preview: "",
             type: "production",
         }
     ];
