@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-11 19:46:42
+// Última actualización: 2026-04-11 20:02:08
 
 function getTracks() {
     return [
@@ -113,7 +113,7 @@ function getTracks() {
             premiumPrice: 65,
             basicPrice: 25,
             premiumPaypalButton: "YJFUQHSMUPSHY",
-            basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
+            basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "https://1024terabox.com/s/1Hg7kBodyRHHa9Syn8-zGuw",
             basicFileForDownload: "https://1024terabox.com/s/1Sx2GFa3vtr7JPtOvW1j6FQ",
         },
