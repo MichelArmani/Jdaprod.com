@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-11 20:07:17
+// Última actualización: 2026-04-11 20:16:30
 
 function getTracks() {
     return [
@@ -70,7 +70,7 @@ function getTracks() {
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
-            premiumPaypalButton: "TN2YM52GDBPLS",
+            premiumPaypalButton: "YJFUQHSMUPSHY",
             basicPaypalButton: "XMMGD24J4K9CA",
             premiumFileForDownload: "",
             basicFileForDownload: "",
