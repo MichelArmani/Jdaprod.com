@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-11 20:16:30
+// Última actualización: 2026-04-11 20:38:09
 
 function getTracks() {
     return [
@@ -29,7 +29,7 @@ function getTracks() {
             premiumPrice: 65,
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
-            basicPaypalButton: "XMMGD24J4K9CA",
+            basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
             basicFileForDownload: "",
         },
@@ -43,7 +43,7 @@ function getTracks() {
             premiumPrice: 65,
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
-            basicPaypalButton: "XMMGD24J4K9CA",
+            basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
             basicFileForDownload: "",
         },
@@ -57,7 +57,7 @@ function getTracks() {
             premiumPrice: 65,
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
-            basicPaypalButton: "XMMGD24J4K9CA",
+            basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
             basicFileForDownload: "",
         },
@@ -71,7 +71,7 @@ function getTracks() {
             premiumPrice: 65,
             basicPrice: 25,
             premiumPaypalButton: "YJFUQHSMUPSHY",
-            basicPaypalButton: "XMMGD24J4K9CA",
+            basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
             basicFileForDownload: "",
         },
@@ -85,7 +85,7 @@ function getTracks() {
             premiumPrice: 65,
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
-            basicPaypalButton: "XMMGD24J4K9CA",
+            basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
             basicFileForDownload: "",
         },
@@ -99,7 +99,7 @@ function getTracks() {
             premiumPrice: 65,
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
-            basicPaypalButton: "XMMGD24J4K9CA",
+            basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "https://1024terabox.com/s/1eVeusFR6ykqoKG8qDofpvg",
             basicFileForDownload: "https://1024terabox.com/s/1fs8SUbkoX_hpi06QRgnoAQ",
         },
@@ -113,7 +113,7 @@ function getTracks() {
             premiumPrice: 65,
             basicPrice: 25,
             premiumPaypalButton: "TN2YM52GDBPLS",
-            basicPaypalButton: "XMMGD24J4K9CA",
+            basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "https://1024terabox.com/s/1Hg7kBodyRHHa9Syn8-zGuw",
             basicFileForDownload: "https://1024terabox.com/s/1Sx2GFa3vtr7JPtOvW1j6FQ",
         },
