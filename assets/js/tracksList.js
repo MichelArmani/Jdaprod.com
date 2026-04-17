@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-16 20:51:35
+// Última actualización: 2026-04-16 20:52:14
 
 function getTracks() {
     return [
@@ -139,14 +139,6 @@ function getTracks() {
             artist: "Henry Sam (prod by J DaProd)",
             duration: "",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Yo_Te_Quiero_1775425849.mp3?v=1775425852",
-            type: "production",
-        },
-        {
-            id: 14,
-            title: "Canción de prueba",
-            artist: "J DaProd",
-            duration: "1:00",
-            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Cancin_de_prueba__1775949186.mp3?v=1775949187",
             type: "production",
         }
     ];
