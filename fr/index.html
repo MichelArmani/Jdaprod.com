@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
     <title>J DaProd Officiel</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/googleFonts.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/BurguerMenuStyles.css">
@@ -17,19 +16,14 @@
     <link rel="stylesheet" href="../assets/css/aboutSectionStyles.css">
     <link rel="stylesheet" href="../assets/css/store.css">
     <link rel="stylesheet" href="../assets/css/paypal.css">
-
     <script src="../assets/js/UI.js"></script>
+
 </head>
-
 <body>
-
     <header id="main-header">
-
         <div class="header-logo-container">
-            <a style="width: 100%; height: 100%; margin: 0; padding: 0; text-align: center; display: flex; align-items: center; justify-content: center;"
-                href="#home"><img class="header-logo" src="../assets/images/logo.png" alt="Logo"></a>
+            <a style="width: 100%; height: 100%; margin: 0; padding: 0; text-align: center; display: flex; align-items: center; justify-content: center;" href="#home"><img class="header-logo" src="../assets/images/logo.png" alt="Logo"></a>
         </div>
-
         <nav class="header-nav">
             <a href="#home" class="nav-link">Accueil</a>
             <a href="#productions" class="nav-link">Productions</a>
@@ -37,36 +31,19 @@
             <a href="#about" class="nav-link">À Propos</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
-
         <div id="burger-menu-toggler" class="burger-menu-toggler">
             <i class="fas fa-bars"></i>
         </div>
     </header>
 
-
     <section class="hero" id="home">
-
-        <div
-            style="width: 100%; height: 100%; position: absolute; background: #07090A; background: radial-gradient(circle, rgba(7, 9, 10, 0) 0%, rgba(255, 255, 255, 0.46) 100%);">
-        </div>
-
-
+        <div style="width: 100%; height: 100%; position: absolute; background: #07090A; background: radial-gradient(circle, rgba(7, 9, 10, 0) 0%, rgba(255, 255, 255, 0.46) 100%);"></div>
         <div class="hero-content">
             <h1 class="hero-title">JDaProd</h1>
-            <p id="insertar-text" class="hero-subtitle">
-
-
-                <script src="../assets/js/FrHeroDescription.js"></script>
-
-                <script>mostrarBiografia("insertar-text", true);</script>
-
-            </p>
-            <style>
-                .hero-subtitle {
-                    /* ombre de dernière minute pour le sous-titre */
-                    text-shadow: 2px 2px 2px black;
-                }
-            </style>
+            <p id="insertar-text" class="hero-subtitle"></p>
+            <script src="../assets/js/FrHeroDescription.js"></script>
+            <script>mostrarBiografia("insertar-text", true);</script>
+            <style>.hero-subtitle { text-shadow: 2px 2px 2px black; }</style>
             <div class="hero-actions">
                 <a href="#productions" class="btn btn-primary">
                     <i class="fas fa-play-circle"></i> Explorer la Musique
@@ -75,53 +52,166 @@
         </div>
     </section>
 
-
     <section class="section productions-section" id="productions">
         <div class="section-header reveal">
             <h2 class="section-title">MES PRODUCTIONS</h2>
             <p class="section-subtitle">Une sélection de mes travaux et collaborations musicales</p>
         </div>
-
-
         <div class="spotify-list reveal" id="tracks-container">
-
             <div class="top-bar-detail"></div>
-
-
         </div>
     </section>
 
-
-    <script src="../assets/js/Frstore.js"></script>
+    <script>
+    (function() {
+        // Variables de contrôle
+        let scriptsLoaded = 0;
+        const totalScripts = 3; // tracksData, Frstore, MichelarmaniAudioPlayer
+        
+        // URL RAW du fichier tracksList.js sur GitHub (toujours la dernière version)
+        const TRACKS_LIST_URL = '../../raw.githubusercontent.com/MichelArmani/Jdaprod.com/refs/heads/main/assets/js/tracksListec92.js?v=' + Date.now();
+        
+        // Variable globale pour stocker les tracks
+        window.tracksData = [];
+        
+        function onAllScriptsLoaded() {
+            console.log('Tous les scripts chargés avec succès');
+            
+            if (window.tracksData && window.tracksData.length > 0) {
+                console.log(`Données des tracks chargées: ${window.tracksData.length} pistes`);
+                window.tracksList = window.tracksData;
+            } else {
+                console.warn('Aucune donnée de tracks trouvée, utilisation de getTracks() si disponible');
+                if (typeof getTracks === 'function') {
+                    window.tracksData = getTracks();
+                    window.tracksList = window.tracksData;
+                }
+            }
+            
+            setTimeout(function() {
+                if (typeof generateTrackItems === 'function') {
+                    console.log('Appel de generateTrackItems()...');
+                    // generateTrackItems();
+                } else {
+                    console.warn('generateTrackItems non définie, recherche dans window');
+                    if (window.generateTrackItems) window.generateTrackItems();
+                }
+                
+                if (typeof generateStoreBeats === 'function') {
+                    console.log('Appel de generateStoreBeats()...');
+                    generateStoreBeats();
+                } else {
+                    console.warn('generateStoreBeats non définie, recherche dans window');
+                    if (window.generateStoreBeats) window.generateStoreBeats();
+                }
+            }, 100);
+        }
+        
+        function onScriptLoaded(name) {
+            scriptsLoaded++;
+            console.log(`${name} chargé (${scriptsLoaded}/${totalScripts})`);
+            if (scriptsLoaded === totalScripts) {
+                onAllScriptsLoaded();
+            }
+        }
+        
+        function loadLocalScript(src, name) {
+            return new Promise((resolve) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = () => {
+                    console.log(`${name} chargé depuis ${src}`);
+                    resolve();
+                };
+                script.onerror = () => {
+                    console.error(`Erreur de chargement de ${name} depuis ${src}`);
+                    resolve();
+                };
+                document.head.appendChild(script);
+            });
+        }
+        
+        async function loadTracksFromGitHub() {
+            console.log('Chargement des tracks depuis GitHub:', TRACKS_LIST_URL);
+            
+            try {
+                const response = await fetch(TRACKS_LIST_URL);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const jsCode = await response.text();
+                console.log('Fichier obtenu, exécution...');
+                
+                eval(jsCode);
+                
+                if (typeof getTracks === 'function') {
+                    window.tracksData = getTracks();
+                    window.tracksList = window.tracksData;
+                    console.log(`Tracks chargés depuis GitHub: ${window.tracksData.length} pistes`);
+                    return true;
+                } else {
+                    throw new Error('getTracks non définie après eval');
+                }
+            } catch (error) {
+                console.error('Erreur de chargement depuis GitHub:', error);
+                return false;
+            }
+        }
+        
+        async function init() {
+            const tracksLoaded = await loadTracksFromGitHub();
+            if (!tracksLoaded) {
+                console.warn('Impossible de charger les tracks depuis GitHub, tentative de fallback local');
+                try {
+                    const localResponse = await fetch('../assets/js/tracksListec92ec92.js?v=' + Date.now());
+                    const localCode = await localResponse.text();
+                    eval(localCode);
+                    if (typeof getTracks === 'function') {
+                        window.tracksData = getTracks();
+                        window.tracksList = window.tracksData;
+                        console.log(`Tracks chargés depuis fallback local: ${window.tracksData.length} pistes`);
+                    }
+                } catch (localError) {
+                    console.error('Le fallback local a également échoué:', localError);
+                    window.tracksData = [];
+                    window.tracksList = [];
+                }
+            }
+            
+            onScriptLoaded('tracksData');
+            
+            await Promise.all([
+                loadLocalScript('../assets/js/Frstore.js', 'Frstore'),
+                loadLocalScript('../assets/js/MichelArmaniAudioPlayer.js', 'MichelarmaniAudioPlayer')
+            ]);
+            
+            onScriptLoaded('Frstore');
+            onScriptLoaded('MichelarmaniAudioPlayer');
+        }
+        
+        init();
+    })();
+    </script>
 
     <section class="section store-section" id="store">
         <div class="section-header reveal">
             <h2 class="section-title">BOUTIQUE DE BEATS</h2>
-            <p class="section-subtitle">Achetez des licences de mes beats pour vos projets. Chaque beat inclut une version basique et premium.</p>
+            <p class="section-subtitle">Achetez des licences de mes beats pour vos projets.</p>
         </div>
-
         <div class="h-container">
-            <div class="store-beats-grid" id="beats-container">
-
-            </div>
+            <div class="store-beats-grid" id="beats-container"></div>
         </div>
     </section>
-
 
     <div class="purchase-modal" id="purchase-modal">
         <div class="purchase-container">
             <div class="purchase-header">
-                <button class="close-purchase" id="close-purchase">
-                    <i class="fas fa-times"></i>
-                </button>
+                <button class="close-purchase" id="close-purchase"><i class="fas fa-times"></i></button>
                 <h3 class="purchase-title" id="purchase-track-title">Detroit to Havana</h3>
                 <p class="purchase-subtitle">Sélectionnez le type de licence</p>
             </div>
-
             <div class="purchase-options">
                 <div class="purchase-option basic-option">
                     <div class="option-header">
-                        <h4 class="option-title">Pack Basique</h4>
+                        <h4 class="option-title">Paquet Basique</h4>
                         <div class="option-price" id="basic-price">25.00 €</div>
                     </div>
                     <ul class="option-features">
@@ -134,15 +224,14 @@
                         <div id="paypal-container-basic" class="paypal-button-wrapper"></div>
                     </div>
                 </div>
-
                 <div class="purchase-option premium">
                     <div class="premium-badge">Premium</div>
                     <div class="option-header">
-                        <h4 class="option-title">Pack Premium</h4>
+                        <h4 class="option-title">Paquet Premium</h4>
                         <div class="option-price" id="premium-price">65.00 €</div>
                     </div>
                     <ul class="option-features">
-                        <li><i class="fas fa-check"></i> Pack Basique +</li>
+                        <li><i class="fas fa-check"></i> Paquet Basique +</li>
                         <li><i class="fas fa-check"></i> Stems</li>
                         <li><i class="fas fa-check"></i> Beats séparés par pistes</li>
                         <li><i class="fas fa-check"></i> Projet FL Studio</li>
@@ -156,72 +245,44 @@
         </div>
     </div>
 
-    </style>
-
     <section class="section about-section">
         <div class="about-container">
             <div class="about-content reveal" id="about">
                 <div class="about-text">
                     <h2 class="about-title">À PROPOS DE MOI</h2>
-
-
-
-                    <p class="about-description">
-                        Jorge David Cumberbatch Navarro, plus connu sous le nom de J DaProd, est un producteur musical et DJ cubain né en 2002.
-                        Originaire de La Havane, il a passé environ 8 ans de son enfance à New York, aux États-Unis,
-                        où il a grandi sous l'influence de la musique afro-américaine, notamment le Rap et le R&B.
-                    </p>
-                    <p class="about-description">
-                        Plus tard, en 2019, à l'âge de 17 ans, il a commencé à faire ses premières productions et événements de DJ dans de petits
-                        établissements, déjà de retour à Cuba. Il a initialement commencé par faire de la musique électronique, en raison de son goût
-                        pour des genres comme le future bass et le melodic dubstep.
-                    </p>
-                    <p class="about-description">
-                        À partir de 2021, il s'est développé dans des genres de ses influences passées comme le trap, le drill,
-                        le R&B. Récemment, après avoir vécu environ un an au Burkina Faso, J a également acquis des influences de
-                        la création urbaine en Afrique francophone et en France même.
-                    </p>
-
+                    <p class="about-description">Jorge David Cumberbatch Navarro, plus connu sous le nom de J DaProd, est un producteur musical et DJ cubain né en 2002. Originaire de La Havane, il a passé environ 8 ans de son enfance à New York, aux États-Unis, où il a grandi sous l'influence de la musique afro-américaine, notamment le Rap et le R&B.</p>
+                    <p class="about-description">Plus tard, en 2019, à l'âge de 17 ans, il a commencé à faire ses premières productions et événements de DJ dans de petits établissements, déjà de retour à Cuba.</p>
+                    <p class="about-description">À partir de 2021, il s'est développé dans des genres de ses influences passées comme le trap, le drill, le R&B.</p>
                     <div class="about-highlights">
                         <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
+                            <div class="highlight-icon"><i class="fas fa-globe-americas"></i></div>
                             <div class="highlight-text">
                                 <h4>Influences Multiculturelles</h4>
-                                <p>Fusion de sons cubains, américains et africains qui créent une identité musicale unique.</p>
+                                <p>Fusion de sons cubains, américains et africains.</p>
                             </div>
                         </div>
-
                         <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-bridge"></i>
-                            </div>
+                            <div class="highlight-icon"><i class="fas fa-bridge"></i></div>
                             <div class="highlight-text">
                                 <h4>Pont Musical</h4>
-                                <p>Connecter des artistes hispanophones, anglophones et francophones grâce à la collaboration et la production.</p>
+                                <p>Connecter des artistes hispanophones, anglophones et francophones.</p>
                             </div>
                         </div>
-
                         <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-sliders-h"></i>
-                            </div>
+                            <div class="highlight-icon"><i class="fas fa-sliders-h"></i></div>
                             <div class="highlight-text">
                                 <h4>Spécialisation</h4>
-                                <p>Focus sur le trap, le drill et le R&B, avec capacité de mixage et mastering dans multiples genres.</p>
+                                <p>Focus sur le trap, le drill et le R&B.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="about-visual">
                     <div class="about-image">
                         <img src="../assets/images/about1.png" alt="J DaProd - Producteur Musical">
                     </div>
                 </div>
             </div>
-
             <div class="about-stats reveal">
                 <div class="stat-item">
                     <div class="stat-number">5+</div>
@@ -235,19 +296,15 @@
         </div>
     </section>
 
-
     <section class="section contact-section" id="contact">
         <div class="section-header reveal">
             <h2 class="section-title">COLLABORONS ENSEMBLE</h2>
-            <p class="section-subtitle">Vous avez un projet en tête ? Parlons de comment nous pouvons créer quelque chose ensemble.</p>
+            <p class="section-subtitle">Vous avez un projet en tête ? Parlons.</p>
         </div>
-
         <div class="h-container">
             <div class="productions-grid">
                 <div class="production-card reveal">
-                    <div class="production-image">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+                    <div class="production-image"><i class="fas fa-envelope"></i></div>
                     <div class="production-info">
                         <h3 class="production-title">CONTACT DIRECT</h3>
                         <p class="production-description">Pour les réservations, collaborations ou simplement pour saluer.</p>
@@ -256,13 +313,8 @@
                         </a>
                     </div>
                 </div>
-
-
-
                 <div class="production-card reveal">
-                    <div class="production-image">
-                        <i class="fas fa-handshake"></i>
-                    </div>
+                    <div class="production-image"><i class="fas fa-handshake"></i></div>
                     <div class="production-info">
                         <h3 class="production-title">COLLABORATIONS</h3>
                         <p class="production-description">Êtes-vous un artiste ou une marque ? Explorons des synergies créatives.</p>
@@ -275,176 +327,71 @@
         </div>
     </section>
 
-
     <footer>
         <div class="social-buttons">
-            <a href="https://instagram.com/jdaprod?igsh=a29wNG4zb2Mwc2Rt&utm_source=qr" class="social-btn"
-                target="_blank">
-                <span class="fab fa-instagram"></span>
-            </a>
-            <a href="https://twitter.com/j_daprod?s=11" class="social-btn" target="_blank">
-                <span class="fab fa-twitter"></span>
-            </a>
-            <a href="https://facebook.com/1BUPXH9iwm/?mibextid=wwXIfr" class="social-btn" target="_blank">
-                <span class="fab fa-facebook-f"></span>
-            </a>
-            <a href="https://youtube.com/@jdaprod?si=2S0vW-BXAruJ80Ld" class="social-btn" target="_blank">
-                <span class="fab fa-youtube"></span>
-            </a>
-            <a href="https://spotify.com/3Cj1SZVvFmNEfEfVTSzuoS?si=Y5IZJ0TeQjyBsx8ygUKycg" class="social-btn"
-                target="_blank">
-                <span class="fab fa-spotify"></span>
-            </a>
+            <a href="https://instagram.com/jdaprod" class="social-btn" target="_blank"><span class="fab fa-instagram"></span></a>
+            <a href="https://twitter.com/j_daprod" class="social-btn" target="_blank"><span class="fab fa-twitter"></span></a>
+            <a href="https://facebook.com/1BUPXH9iwm" class="social-btn" target="_blank"><span class="fab fa-facebook-f"></span></a>
+            <a href="https://youtube.com/@jdaprod" class="social-btn" target="_blank"><span class="fab fa-youtube"></span></a>
+            <a href="https://spotify.com/3Cj1SZVvFmNEfEfVTSzuoS" class="social-btn" target="_blank"><span class="fab fa-spotify"></span></a>
         </div>
-
         <div class="copyright">
-            <p>&copy; 2025. Tous droits réservés. | Conçu avec <i class="fas fa-heart"
-                    style="color: var(--emerald-glow);"></i></p>
+            <p>&copy; 2025. Tous les droits réservés. | Conçu avec <i class="fas fa-heart" style="color: var(--emerald-glow);"></i></p>
         </div>
     </footer>
 
-    <!-- Lecteur de musique :
-
-        Ceci n'est pas visible sur la page, le code est présent seulement si je l'appelle depuis MichelArmaniAudioPlayer.js
-        Si vous voulez le visualiser, vous devez jouer une chanson -->
-
     <div class="player-modal" id="player-modal">
-        <div class="close-player" id="close-player">
-            <i class="fas fa-times"></i>
-        </div>
+        <div class="close-player" id="close-player"><i class="fas fa-times"></i></div>
         <div class="player-container">
             <div class="player-header">
-                <div class="player-album-art">
-                    <i class="fas fa-music"></i>
-                </div>
+                <div class="player-album-art"><i class="fas fa-music"></i></div>
                 <div class="player-track-info">
-                    <h3 class="player-track-title" id="player-track-title">ECOS DEL ABISMO</h3>
-                    <p class="player-track-artist" id="player-track-artist">TP el DJ</p>
+                    <h3 class="player-track-title" id="player-track-title">Track</h3>
+                    <p class="player-track-artist" id="player-track-artist">J DaProd</p>
                 </div>
             </div>
             <div class="player-controls">
                 <div class="progress-container">
-                    <div class="progress-bar" id="progress-bar">
-                        <div class="progress" id="progress"></div>
-                    </div>
+                    <div class="progress-bar" id="progress-bar"><div class="progress" id="progress"></div></div>
                     <div class="time-info">
                         <span id="current-time">0:00</span>
                         <span id="duration">0:00</span>
                     </div>
                 </div>
                 <div class="control-buttons">
-                    <div class="control-btn secondary" id="prev-btn">
-                        <i class="fas fa-step-backward"></i>
-                    </div>
-                    <div class="control-btn play-pause" id="play-pause-btn">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="control-btn secondary" id="next-btn">
-                        <i class="fas fa-step-forward"></i>
-                    </div>
+                    <div class="control-btn secondary" id="prev-btn"><i class="fas fa-step-backward"></i></div>
+                    <div class="control-btn play-pause" id="play-pause-btn"><i class="fas fa-play"></i></div>
+                    <div class="control-btn secondary" id="next-btn"><i class="fas fa-step-forward"></i></div>
                 </div>
                 <div class="volume-control">
                     <i class="fas fa-volume-up"></i>
-                    <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider"
-                        id="volume-slider">
+                    <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider" id="volume-slider">
                 </div>
             </div>
         </div>
     </div>
 
-
     <audio id="audio-player" preload="metadata"></audio>
-    <script>  const fecha = new Date();  
-    document.write('<script src="https://michelarmani.github.io/Jdaprod.com/assets/js/tracksList.js?v=' + fecha.toLocaleString() + '"><\/script>');</script>
-
-function loadTracksList() {
-    // Generar timestamp único para cada carga
-    const timestamp = new Date().getTime();
-    const random = Math.random().toString(36).substring(7);
-    
-    // Crear elemento script dinámicamente
-    const script = document.createElement('script');
-    
-    // URL ABSOLUTA con protocolo https://
-    script.src = `https://michelarmani.github.io/Jdaprod.com/assets/js/tracksList.js?t=${timestamp}&r=${random}`;
-    
-    script.type = 'text/javascript';
-    
-    // Cuando se carga, ejecutar Get_tracks()
-    script.onload = function() {
-        console.log('tracksList.js cargado sin caché desde GitHub');
-        if (typeof Get_tracks === 'function') {
-            Get_tracks();
-        }
-    };
-    
-    script.onerror = function() {
-        console.error('Error cargando tracksList.js desde GitHub');
-        // Puedes intentar con raw.githubusercontent como fallback
-        loadFallbackTracks();
-    };
-    
-    document.body.appendChild(script);
-}
-
-// Fallback: cargar directamente desde raw.githubusercontent
-function loadFallbackTracks() {
-    const timestamp = new Date().getTime();
-    const script = document.createElement('script');
-    script.src = `https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/js/tracksList.js?t=${timestamp}`;
-    script.type = 'text/javascript';
-    script.onload = function() {
-        console.log('tracksList.js cargado desde raw.githubusercontent');
-        if (typeof Get_tracks === 'function') {
-            Get_tracks();
-        }
-    };
-    script.onerror = function() {
-        console.error('Error en ambos métodos de carga');
-    };
-    document.head.appendChild(script);
-}
-
-document.addEventListener('DOMContentLoaded', loadTracksList);
-
-window.reloadTracks = function() {
-    loadTracksList();
-    return "Recargando tracks...";
-};
-    <script src="../assets/js/MichelArmaniAudioPlayer.js"></script>
-
-
-
-
 
     <div class="burger-menu-overlay" id="burger-menu-overlay"></div>
-
     <div class="burger-menu" id="burger-menu">
-        <button class="close-burger-menu" id="close-burger-menu">
-            <i class="fas fa-times"></i>
-        </button>
-
+        <button class="close-burger-menu" id="close-burger-menu"><i class="fas fa-times"></i></button>
         <nav class="burger-menu-nav">
-
             <h1 class="hero-title">J DaProd</h1>
-
-            <a href="#home" class="burger-nav-link" onclick="closeBurgerMenu()">
-                <i class="fas fa-home"></i> Accueil
-            </a>
-            <a href="#productions" class="burger-nav-link" onclick="closeBurgerMenu()">
-                <i class="fas fa-music"></i> Productions
-            </a>
-            <a href="#store" class="burger-nav-link" onclick="closeBurgerMenu()">
-                <i class="fas fa-shopping-bag"></i> Boutique
-            </a>
-            <a href="#contact" class="burger-nav-link" onclick="closeBurgerMenu()">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-            <a href="#about" class="burger-nav-link" onclick="closeBurgerMenu()">
-                <i class="fas fa-user"></i> À Propos
-            </a>
+            <a href="#home" class="burger-nav-link" onclick="closeBurgerMenu()"><i class="fas fa-home"></i> Accueil</a>
+            <a href="#productions" class="burger-nav-link" onclick="closeBurgerMenu()"><i class="fas fa-music"></i> Productions</a>
+            <a href="#store" class="burger-nav-link" onclick="closeBurgerMenu()"><i class="fas fa-shopping-bag"></i> Boutique</a>
+            <a href="#contact" class="burger-nav-link" onclick="closeBurgerMenu()"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="#about" class="burger-nav-link" onclick="closeBurgerMenu()"><i class="fas fa-user"></i> À Propos</a>
         </nav>
     </div>
+    <script>
+        function getTracks(){
+            return window.tracksData;
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9eae40e49ce353d5',t:'MTc3NTk1NTIwMA=='};var a=document.createElement('script');a.src='../cdn-cgi/challenge-platform/h/g/scripts/jsd/b0a7532ac8ec/maind41d.html';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"71aaede554f24f51a3e09c5165a9dbe7","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0087d5caa79675a',t:'MTc3OTU4NTc1MA=='};var a=document.createElement('script');a.src='../cdn-cgi/challenge-platform/h/b/scripts/jsd/1eec422858ff/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"71aaede554f24f51a3e09c5165a9dbe7","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 
 </html>
