@@ -106,11 +106,11 @@ function addStoreEventListeners() {
             const script = document.createElement('script');
             script.src = 'https://www.paypal.com/sdk/js?client-id=BAAjLeU3hHuW_jvliJ9enzjx6anVNS6epANv1FI7PGdt-EIyrJopXLF5IeFM9yc3W3gzo2aHe6UJ124bNs&components=hosted-buttons&disable-funding=venmo&currency=EUR';
             script.async = true;
-            script.onload = function() {
+            script.onload = function () {
                 paypalSDKLoaded = true;
                 console.log('PayPal SDK loaded successfully');
             };
-            script.onerror = function() {
+            script.onerror = function () {
                 console.error('Failed to load PayPal SDK');
             };
             document.head.appendChild(script);
@@ -135,26 +135,26 @@ function addStoreEventListeners() {
         button.addEventListener('click', function () {
             const trackId = parseInt(this.getAttribute('data-track'));
             const track = getTracks().find(t => t.id === trackId);
-    
+
             if (track) {
                 currentTrack = track;
                 purchaseTitle.textContent = track.title;
-                
+
                 // Update prices dynamically
                 const basicPriceElement = document.getElementById('basic-price');
                 const premiumPriceElement = document.getElementById('premium-price');
-                
+
                 if (basicPriceElement) {
                     basicPriceElement.textContent = formatPrice(track.basicPrice);
                 }
-                
+
                 if (premiumPriceElement) {
                     premiumPriceElement.textContent = formatPrice(track.premiumPrice);
                 }
-                
+
                 purchaseModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
-                
+
                 // Wait for modal to be visible before rendering PayPal
                 setTimeout(() => {
                     renderPayPalButtons(track);
@@ -200,7 +200,7 @@ function addStoreEventListeners() {
 function renderPayPalButtons(track) {
     // Clear containers first
     clearPayPalButtons();
-    
+
     // Verify PayPal is available
     if (typeof paypal === 'undefined') {
         console.error('PayPal SDK not loaded');
@@ -210,50 +210,44 @@ function renderPayPalButtons(track) {
 
     try {
         // Basic button
+        // Basic button - MODIFICADO
         paypal.HostedButtons({
-            hostedButtonId: "XMMGD24J4K9CA",
-            onInit: function(data, actions) {
+            hostedButtonId: "54T5HBWE5SZM8",
+            
+            onInit: function (data, actions) {
                 console.log('Basic button initialized');
             },
-            onClick: function() {
+            onClick: function () {
                 console.log('Basic button clicked for track:', track.title);
             },
-            onApprove: function(data, actions) {
+            onApprove: function (data, actions) {
                 console.log('Basic payment approved:', data);
-                // Redirect to confirmation page
                 window.location.href = `confirmacion.html?track=${encodeURIComponent(track.title)}&license=basic&order=${data.orderID}`;
             },
-            onError: function(err) {
+            onError: function (err) {
                 console.error('Basic button error:', err);
                 showPayPalError();
             }
-        }).render("#paypal-container-basic").catch(error => {
-            console.error('Error rendering basic button:', error);
-            showPayPalError();
-        });
+        }).render("#paypal-container-basic")
 
-        // Premium button
+        // Premium button - MODIFICADO
         paypal.HostedButtons({
-            hostedButtonId: "TN2YM52GDBPLS",
-            onInit: function(data, actions) {
+            hostedButtonId: "YJFUQHSMUPSHY",
+            onInit: function (data, actions) {
                 console.log('Premium button initialized');
             },
-            onClick: function() {
+            onClick: function () {
                 console.log('Premium button clicked for track:', track.title);
             },
-            onApprove: function(data, actions) {
+            onApprove: function (data, actions) {
                 console.log('Premium payment approved:', data);
-                // Redirect to confirmation page
                 window.location.href = `confirmacion.html?track=${encodeURIComponent(track.title)}&license=premium&order=${data.orderID}`;
             },
-            onError: function(err) {
+            onError: function (err) {
                 console.error('Premium button error:', err);
                 showPayPalError();
             }
-        }).render("#paypal-container-premium").catch(error => {
-            console.error('Error rendering premium button:', error);
-            showPayPalError();
-        });
+        }).render("#paypal-container-premium")
 
     } catch (error) {
         console.error('Error initializing PayPal buttons:', error);
@@ -265,7 +259,7 @@ function renderPayPalButtons(track) {
 function clearPayPalButtons() {
     const basicContainer = document.getElementById('paypal-container-basic');
     const premiumContainer = document.getElementById('paypal-container-premium');
-    
+
     if (basicContainer) basicContainer.innerHTML = '';
     if (premiumContainer) premiumContainer.innerHTML = '';
 }
@@ -274,7 +268,7 @@ function clearPayPalButtons() {
 function showPayPalError() {
     const basicContainer = document.getElementById('paypal-container-basic');
     const premiumContainer = document.getElementById('paypal-container-premium');
-    
+
     const errorHTML = `
         <div class="paypal-error">
             <p>Error loading payment buttons</p>
@@ -284,7 +278,7 @@ function showPayPalError() {
             </a>
         </div>
     `;
-    
+
     if (basicContainer) basicContainer.innerHTML = errorHTML;
     if (premiumContainer) premiumContainer.innerHTML = errorHTML;
 }
@@ -296,67 +290,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Function to force PayPal button styles
 function forcePayPalButtonStyles() {
-    // Wait for PayPal elements to be in the DOM
-    setTimeout(() => {
-        // Select all PayPal checkout buttons
-        const checkoutButtons = document.querySelectorAll('#checkout-button');
-        
-        checkoutButtons.forEach(button => {
-            // Apply inline styles to force appearance
-            button.style.cssText = `
-                width: 100% !important;
-                padding: 1rem !important;
-                border-radius: 50px !important;
-                border: none !important;
-                font-weight: 600 !important;
-                font-size: 1rem !important;
-                cursor: pointer !important;
-                transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-                text-transform: uppercase !important;
-                letter-spacing: 1px !important;
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                font-family: Inter, sans-serif !important;
-            `;
-            
-            // Determine if basic or premium based on parent container
-            const parentContainer = button.closest('.purchase-option');
-            if (parentContainer.classList.contains('premium')) {
-                button.style.cssText += `
-                    background: var(--gold) !important;
-                    color: var(--deep-space) !important;
-                    font-weight: 700 !important;
-                `;
-            } else {
-                button.style.cssText += `
-                    background: var(--emerald-medium) !important;
-                    color: var(--platinum) !important;
-                `;
-            }
-        });
-        
-        // Hide unwanted PayPal elements
-        const unwantedElements = document.querySelectorAll(`
-            .item-header,
-            .item-title,
-            .price-container,
-            .css-au42bs,
-            .paypal-buttons
-        `);
-        
-        unwantedElements.forEach(el => {
-            if (el) el.style.display = 'none !important';
-        });
-        
-    }, 500);
+
 }
 
 // Modify renderPayPalButtons function to include style forcing
 function renderPayPalButtons(track) {
     // Clear containers first
     clearPayPalButtons();
-    
+
     // Verify PayPal is available
     if (typeof paypal === 'undefined') {
         console.error('PayPal SDK not loaded');
@@ -367,8 +308,8 @@ function renderPayPalButtons(track) {
     try {
         // Basic button
         paypal.HostedButtons({
-            hostedButtonId: "XMMGD24J4K9CA",
-            onInit: function(data, actions) {
+            hostedButtonId: "54T5HBWE5SZM8",
+            onInit: function (data, actions) {
                 console.log('Basic button initialized');
                 const container = document.getElementById('paypal-container-basic');
                 if (container) {
@@ -377,14 +318,14 @@ function renderPayPalButtons(track) {
                 // Force styles after initialization
                 setTimeout(forcePayPalButtonStyles, 300);
             },
-            onClick: function() {
+            onClick: function () {
                 console.log('Basic button clicked for track:', track.title);
             },
-            onApprove: function(data, actions) {
+            onApprove: function (data, actions) {
                 console.log('Basic payment approved:', data);
                 window.location.href = `confirmacion.html?track=${encodeURIComponent(track.title)}&license=basic&order=${data.orderID}`;
             },
-            onError: function(err) {
+            onError: function (err) {
                 console.error('Basic button error:', err);
                 showPayPalError();
             }
@@ -395,8 +336,8 @@ function renderPayPalButtons(track) {
 
         // Premium button
         paypal.HostedButtons({
-            hostedButtonId: "TN2YM52GDBPLS",
-            onInit: function(data, actions) {
+            hostedButtonId: "YJFUQHSMUPSHY",
+            onInit: function (data, actions) {
                 console.log('Premium button initialized');
                 const container = document.getElementById('paypal-container-premium');
                 if (container) {
@@ -405,14 +346,14 @@ function renderPayPalButtons(track) {
                 // Force styles after initialization
                 setTimeout(forcePayPalButtonStyles, 300);
             },
-            onClick: function() {
+            onClick: function () {
                 console.log('Premium button clicked for track:', track.title);
             },
-            onApprove: function(data, actions) {
+            onApprove: function (data, actions) {
                 console.log('Premium payment approved:', data);
                 window.location.href = `confirmacion.html?track=${encodeURIComponent(track.title)}&license=premium&order=${data.orderID}`;
             },
-            onError: function(err) {
+            onError: function (err) {
                 console.error('Premium button error:', err);
                 showPayPalError();
             }

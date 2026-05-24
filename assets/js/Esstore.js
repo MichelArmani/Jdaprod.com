@@ -211,7 +211,7 @@ function renderPayPalButtons(track) {
     try {
         // Botón Básico
         paypal.HostedButtons({
-            hostedButtonId: "XMMGD24J4K9CA",
+            hostedButtonId: "54T5HBWE5SZM8",
             onInit: function(data, actions) {
                 console.log('Basic button initialized');
             },
@@ -234,7 +234,7 @@ function renderPayPalButtons(track) {
 
         // Botón Premium
         paypal.HostedButtons({
-            hostedButtonId: "TN2YM52GDBPLS",
+            hostedButtonId: "YJFUQHSMUPSHY",
             onInit: function(data, actions) {
                 console.log('Premium button initialized');
             },
@@ -311,60 +311,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Función para forzar los estilos de los botones PayPal
 function forcePayPalButtonStyles() {
-    // Esperar a que los elementos de PayPal estén en el DOM
-    setTimeout(() => {
-        // Seleccionar todos los botones de checkout de PayPal
-        const checkoutButtons = document.querySelectorAll('#checkout-button');
-        
-        checkoutButtons.forEach(button => {
-            // Aplicar estilos inline para forzar la apariencia
-            button.style.cssText = `
-                width: 100% !important;
-                padding: 1rem !important;
-                border-radius: 50px !important;
-                border: none !important;
-                font-weight: 600 !important;
-                font-size: 1rem !important;
-                cursor: pointer !important;
-                transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-                text-transform: uppercase !important;
-                letter-spacing: 1px !important;
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                font-family: Inter, sans-serif !important;
-            `;
-            
-            // Determinar si es básico o premium basado en el contenedor padre
-            const parentContainer = button.closest('.purchase-option');
-            if (parentContainer.classList.contains('premium')) {
-                button.style.cssText += `
-                    background: var(--gold) !important;
-                    color: var(--deep-space) !important;
-                    font-weight: 700 !important;
-                `;
-            } else {
-                button.style.cssText += `
-                    background: var(--emerald-medium) !important;
-                    color: var(--platinum) !important;
-                `;
-            }
-        });
-        
-        // Ocultar elementos no deseados de PayPal
-        const unwantedElements = document.querySelectorAll(`
-            .item-header,
-            .item-title,
-            .price-container,
-            .css-au42bs,
-            .paypal-buttons
-        `);
-        
-        unwantedElements.forEach(el => {
-            if (el) el.style.display = 'none !important';
-        });
-        
-    }, 500);
 }
 
 // Modificar la función renderPayPalButtons para incluir el forzado de estilos
@@ -382,7 +328,7 @@ function renderPayPalButtons(track) {
     try {
         // Botón Básico
         paypal.HostedButtons({
-            hostedButtonId: "XMMGD24J4K9CA",
+            hostedButtonId: "54T5HBWE5SZM8",
             onInit: function(data, actions) {
                 console.log('Basic button initialized');
                 const container = document.getElementById('paypal-container-basic');
@@ -410,7 +356,7 @@ function renderPayPalButtons(track) {
 
         // Botón Premium
         paypal.HostedButtons({
-            hostedButtonId: "TN2YM52GDBPLS",
+            hostedButtonId: "YJFUQHSMUPSHY",
             onInit: function(data, actions) {
                 console.log('Premium button initialized');
                 const container = document.getElementById('paypal-container-premium');
