@@ -268,7 +268,7 @@ header.scrolled {
 
 @media (max-width:540px) {
     .hero {
-        background-image: url(../images/v1/1.png);
+        background-image: url(../images/v1/1.html);
         background-repeat: no-repeat;
         background-size: cover
     }
@@ -276,7 +276,7 @@ header.scrolled {
 
 @media (min-width:540px) {
     .hero {
-        background-image: url(../images/2.jpg);
+        background-image: url(../images/2.html);
         background-repeat: no-repeat;
         background-size: cover
     }
