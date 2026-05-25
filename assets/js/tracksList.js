@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-04-16 20:52:20
+// Última actualización: 2026-05-25 17:56:02
 
 function getTracks() {
     return [
@@ -140,6 +140,20 @@ function getTracks() {
             duration: "",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Yo_Te_Quiero_1775425849.mp3?v=1775425852",
             type: "production",
+        },
+        {
+            id: 14,
+            title: "L´éléphant",
+            artist: "J DaProd",
+            duration: "2:12",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Llphant__1779746160.mp3?v=1779746162",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "https://www.paypal.com/ncp/payment/YJFUQHSMUPSHY",
+            basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
+            premiumFileForDownload: "https://1024terabox.com/s/1IXcJPNi5Qr1_uE-GXcferQ",
+            basicFileForDownload: "https://1024terabox.com/s/1nAilS85cZ04yKLg2J78QTg",
         }
     ];
 }
