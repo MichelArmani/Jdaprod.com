@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-05-25 17:56:02
+// Última actualización: 2026-05-28 05:42:42
 
 function getTracks() {
     return [
@@ -15,8 +15,8 @@ function getTracks() {
             id: 2,
             title: "New York my Home",
             artist: "J DaProd",
-            duration: "",
-            preview: "empty",
+            duration: "1:12",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/New_York_my_Home_1779961195.mp3?v=1779961197",
             type: "production",
         },
         {
@@ -24,7 +24,7 @@ function getTracks() {
             title: "Detroit to Havana",
             artist: "J DaProd",
             duration: "3:45",
-            preview: "empty",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Detroit_to_Havana_1779961221.mp3?v=1779961223",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -38,7 +38,7 @@ function getTracks() {
             title: "Durkio",
             artist: "J DaProd",
             duration: "3:20",
-            preview: "empty",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Durkio_1779961240.mp3?v=1779961242",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -52,7 +52,7 @@ function getTracks() {
             title: "Favorite Gangsta",
             artist: "J DaProd",
             duration: "3:15",
-            preview: "empty",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Favorite_Gangsta_1779961246.mp3?v=1779961248",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -66,7 +66,7 @@ function getTracks() {
             title: "God On Da Keys",
             artist: "J DaProd",
             duration: "3:30",
-            preview: "empty",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/God_On_Da_Keys_1779961259.mp3?v=1779961261",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -80,7 +80,7 @@ function getTracks() {
             title: "Kehlani",
             artist: "J DaProd",
             duration: "3:25",
-            preview: "empty",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Kehlani_1779961266.mp3?v=1779961267",
             type: "shop",
             premiumPrice: 65,
             basicPrice: 25,
@@ -129,7 +129,7 @@ function getTracks() {
             id: 12,
             title: "Dime",
             artist: "Adarhi (prod by J DaProd)",
-            duration: "",
+            duration: "2:18",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Dime_1775425392.mp3?v=1775425394",
             type: "production",
         },
@@ -137,7 +137,7 @@ function getTracks() {
             id: 13,
             title: "Yo Te Quiero",
             artist: "Henry Sam (prod by J DaProd)",
-            duration: "",
+            duration: "3:33",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Yo_Te_Quiero_1775425849.mp3?v=1775425852",
             type: "production",
         },
