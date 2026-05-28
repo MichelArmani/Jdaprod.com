@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-05-28 05:42:42
+// Última actualización: 2026-05-28 05:43:12
 
 function getTracks() {
     return [
@@ -7,7 +7,7 @@ function getTracks() {
             id: 1,
             title: "I Remember Everything",
             artist: "J DaProd",
-            duration: "",
+            duration: "2:14",
             preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/I_Remember_Everything_1775416091.mp3?v=1775416094",
             type: "production",
         },
