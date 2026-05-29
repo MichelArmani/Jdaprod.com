@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-05-28 05:43:12
+// Última actualización: 2026-05-29 04:39:53
 
 function getTracks() {
     return [
@@ -31,7 +31,7 @@ function getTracks() {
             premiumPaypalButton: "TN2YM52GDBPLS",
             basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
-            basicFileForDownload: "",
+            basicFileForDownload: "https://1024terabox.com/s/1Wz_rBRT0NSFyT6uOeHMLLQ",
         },
         {
             id: 5,
@@ -45,7 +45,7 @@ function getTracks() {
             premiumPaypalButton: "TN2YM52GDBPLS",
             basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
-            basicFileForDownload: "",
+            basicFileForDownload: "https://1024terabox.com/s/1igImzBZGJTh-X1kCC0q2SA",
         },
         {
             id: 6,
@@ -73,7 +73,7 @@ function getTracks() {
             premiumPaypalButton: "YJFUQHSMUPSHY",
             basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
-            basicFileForDownload: "",
+            basicFileForDownload: "https://1024terabox.com/s/1N9tomAw7HaiWqOYIOzfcsA",
         },
         {
             id: 8,
@@ -87,7 +87,7 @@ function getTracks() {
             premiumPaypalButton: "TN2YM52GDBPLS",
             basicPaypalButton: "54T5HBWE5SZM8",
             premiumFileForDownload: "",
-            basicFileForDownload: "",
+            basicFileForDownload: "https://1024terabox.com/s/15NiS_G-6zqMyKQU76xWttg",
         },
         {
             id: 9,
