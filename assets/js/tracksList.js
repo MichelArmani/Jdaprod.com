@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-06-01 20:12:32
+// Última actualización: 2026-06-01 20:14:56
 
 function getTracks() {
     return [
@@ -154,6 +154,20 @@ function getTracks() {
             basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
             premiumFileForDownload: "https://1024terabox.com/s/1IXcJPNi5Qr1_uE-GXcferQ",
             basicFileForDownload: "https://1024terabox.com/s/1nAilS85cZ04yKLg2J78QTg",
+        },
+        {
+            id: 15,
+            title: "Amor Complicated",
+            artist: "J DaProd",
+            duration: "2:58",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Amor_Complicated_1780359293.mp3?v=1780359296",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "https://www.paypal.com/ncp/payment/YJFUQHSMUPSHY",
+            basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
+            premiumFileForDownload: "https://1024terabox.com/s/1wlSTnf88nZbScii-Xu1YTg",
+            basicFileForDownload: "https://1024terabox.com/s/1puyKgr942LzvRNFzqzQCeg",
         }
     ];
 }
