@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-06-01 20:14:56
+// Última actualización: 2026-07-18 11:10:19
 
 function getTracks() {
     return [
@@ -168,6 +168,20 @@ function getTracks() {
             basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
             premiumFileForDownload: "https://1024terabox.com/s/1wlSTnf88nZbScii-Xu1YTg",
             basicFileForDownload: "https://1024terabox.com/s/1puyKgr942LzvRNFzqzQCeg",
+        },
+        {
+            id: 16,
+            title: "Mamadi Doumbouya",
+            artist: "J DaProd",
+            duration: "2:00",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Mamadi_Doumbouya_1784387416.mp3?v=1784387419",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "https://www.paypal.com/ncp/payment/YJFUQHSMUPSHY",
+            basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
+            premiumFileForDownload: "https://1024terabox.com/s/1MTaHkgRQBHqBhHhtaciZNw",
+            basicFileForDownload: "https://1024terabox.com/s/1heg94Z3IaHD57wwcTl2k9w",
         }
     ];
 }
