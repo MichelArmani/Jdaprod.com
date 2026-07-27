@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-07-18 11:10:19
+// Última actualización: 2026-07-27 14:51:29
 
 function getTracks() {
     return [
@@ -182,6 +182,20 @@ function getTracks() {
             basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
             premiumFileForDownload: "https://1024terabox.com/s/1MTaHkgRQBHqBhHhtaciZNw",
             basicFileForDownload: "https://1024terabox.com/s/1heg94Z3IaHD57wwcTl2k9w",
+        },
+        {
+            id: 17,
+            title: "Synthetic",
+            artist: "J DaProd",
+            duration: "2:19",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Synthetic_1785178285.mp3?v=1785178289",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "https://www.paypal.com/ncp/payment/YJFUQHSMUPSHY",
+            basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
+            premiumFileForDownload: "https://1024terabox.com/s/1yaOoK67KTtFrg6W2CUS0Qw",
+            basicFileForDownload: "https://1024terabox.com/s/1FXsh5mPUv0Ssv04xZ3hiow",
         }
     ];
 }
