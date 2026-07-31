@@ -1,5 +1,5 @@
 // Archivo generado automáticamente por el Panel de Administración
-// Última actualización: 2026-07-27 14:51:29
+// Última actualización: 2026-07-31 19:18:56
 
 function getTracks() {
     return [
@@ -196,6 +196,20 @@ function getTracks() {
             basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
             premiumFileForDownload: "https://1024terabox.com/s/1yaOoK67KTtFrg6W2CUS0Qw",
             basicFileForDownload: "https://1024terabox.com/s/1FXsh5mPUv0Ssv04xZ3hiow",
+        },
+        {
+            id: 18,
+            title: "Influences",
+            artist: "J DaProd x Soullaight",
+            duration: "3:35",
+            preview: "https://raw.githubusercontent.com/MichelArmani/Jdaprod.com/main/assets/previews/Influences__1785539933.mp3?v=1785539936",
+            type: "shop",
+            premiumPrice: 65,
+            basicPrice: 25,
+            premiumPaypalButton: "https://www.paypal.com/ncp/payment/YJFUQHSMUPSHY",
+            basicPaypalButton: "https://www.paypal.com/ncp/payment/54T5HBWE5SZM8",
+            premiumFileForDownload: "https://1024terabox.com/s/1qWaKvgtOTgWXszM4rUDmUQ",
+            basicFileForDownload: "https://1024terabox.com/s/1pCK_8iRFfz-zyzCGW8hYhQ",
         }
     ];
 }
